@@ -1,0 +1,306 @@
+/* =========================================================
+   ONNYLAB — USER POLISH LAYER
+   Loaded last on user pages.
+========================================================= */
+
+:root{
+  --user-control-h:44px;
+  --user-control-radius:11px;
+  --user-card-radius:16px;
+  --user-font-micro:10px;
+  --user-font-caption:11px;
+  --user-font-body:13px;
+  --user-font-button:12px;
+}
+
+/* Shared sidebar consistency */
+.sidebar-brand{
+  min-height:70px;
+}
+
+.sidebar-profile{
+  width:100%;
+  min-height:60px;
+  box-sizing:border-box;
+  text-align:left;
+}
+
+.sidebar-profile.is-current{
+  background:rgba(255,255,255,.10)!important;
+  box-shadow:inset 0 0 0 1px rgba(125,211,252,.13);
+}
+
+.sidebar-nav-expanded{
+  flex:1 1 auto!important;
+}
+
+.sidebar-nav-expanded .nav-item{
+  font-size:13px!important;
+}
+
+.sidebar-nav-label{
+  font-size:10px!important;
+}
+
+.sidebar-user span{
+  font-size:10px!important;
+}
+
+/* Type scale */
+.main-content{
+  font-size:var(--user-font-body);
+}
+
+.eyebrow,
+.section-label,
+.hero-label,
+.panel-label,
+.game-mode-label,
+.result-eyebrow,
+.dash-kicker,
+.practice-section-heading>span{
+  font-size:10px!important;
+  line-height:1.35!important;
+}
+
+.page-description,
+.topbar-description,
+.learning-description,
+.mode-help-card p,
+.game-card p,
+.mode-card p,
+.history-card p,
+.profile-card p{
+  font-size:12px!important;
+  line-height:1.55!important;
+}
+
+/* Controls */
+.main-content button,
+.main-content .primary-button,
+.main-content .save-button,
+.main-content .page-primary-button,
+.main-content .primary-action-button,
+.main-content .start-button,
+.main-content .hero-button,
+.main-content .game-start-button,
+.main-content .submit-synonym-button{
+  min-height:var(--user-control-h);
+  border-radius:var(--user-control-radius)!important;
+  font-size:var(--user-font-button)!important;
+  font-weight:800!important;
+}
+
+.main-content input:not([type="checkbox"]):not([type="radio"]),
+.main-content select{
+  min-height:var(--user-control-h)!important;
+  font-size:12px!important;
+  box-sizing:border-box;
+}
+
+.main-content textarea{
+  min-height:96px;
+  font-size:12px!important;
+  line-height:1.5;
+}
+
+/* Standard states */
+.ui-state{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:16px;
+  border:1px solid var(--v3-border);
+  border-radius:14px;
+  background:#fff;
+  color:#5E738A;
+  font-size:12px;
+  line-height:1.55;
+}
+
+.ui-state-loading{
+  border-color:#D8E8FB;
+  background:#F3F8FF;
+  color:#346A9D;
+}
+
+.ui-state-empty{
+  justify-content:center;
+  text-align:center;
+  border-style:dashed;
+  background:#FAFCFF;
+  color:#7C8DA1;
+}
+
+.ui-state-error{
+  border-color:#F1D2D7;
+  background:#FFF5F6;
+  color:#A94753;
+}
+
+.ui-state-success{
+  border-color:#D4EDDF;
+  background:#F3FBF6;
+  color:#187B4F;
+}
+
+/* Existing loading / empty / error views */
+.grammar-empty-card,
+.empty-state,
+.history-empty,
+.review-empty,
+.no-data-state,
+.error-state,
+.loading-state{
+  border:1px dashed #D8E1EC!important;
+  border-radius:16px!important;
+  background:#FAFCFF!important;
+  color:#728399!important;
+}
+
+.grammar-empty-card h1,
+.empty-state h2,
+.history-empty h2,
+.review-empty h2{
+  color:#284766!important;
+}
+
+/* Language pattern:
+   Navigation & action labels = English.
+   Guidance / descriptions = Thai.
+*/
+.mobile-brand span,
+.mobile-title span{
+  color:#8493A6;
+}
+
+/* Mobile bottom navigation */
+@media(max-width:700px){
+  .sidebar-nav.sidebar-nav-expanded{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+
+  .nav-item{
+    font-size:10px!important;
+  }
+
+  .sidebar-profile,
+  .sidebar-brand,
+  .logout-button{
+    display:none!important;
+  }
+}
+
+/* Existing User state classes mapped to the shared state language */
+.dash-recent-empty,
+.learning-empty,
+.empty-state{
+  padding:28px 18px!important;
+  border:1px dashed #D8E1EC!important;
+  border-radius:16px!important;
+  background:#FAFCFF!important;
+  color:#75869A!important;
+  font-size:12px!important;
+  line-height:1.55!important;
+  text-align:center;
+}
+
+.game-state.loading-state{
+  border-color:#D8E8FB!important;
+  background:#F3F8FF!important;
+  color:#346A9D!important;
+}
+
+.game-state.error-state,
+.result-message.error,
+.form-message.error{
+  border-color:#F1D2D7!important;
+  background:#FFF5F6!important;
+  color:#A94753!important;
+}
+
+.result-message.success,
+.form-message.success{
+  border-color:#D4EDDF!important;
+  background:#F3FBF6!important;
+  color:#187B4F!important;
+}
+
+.game-footer-message,
+.result-message,
+.form-message{
+  padding:12px 14px!important;
+  border-radius:12px!important;
+  font-size:12px!important;
+  line-height:1.5!important;
+}
+
+.loading-spinner,
+.grammar-loading-mark{
+  animation:userPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes userPulse{
+  0%,100%{opacity:.45;transform:scale(.98)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+/* =========================================================
+   FINAL USER CONSISTENCY
+========================================================= */
+
+:root{
+  --v3-border:#E3E8F0;
+  --v3-muted:#74839A;
+  --v3-success:#27B56F;
+  --v3-danger:#E45C68;
+}
+
+/* Shared action rhythm */
+.game-page button,
+.result-page button,
+.grammar-game-page button,
+.grammar-game-page .grammar-exit-link,
+.grammar-game-page .grammar-switch-mode,
+.grammar-game-page .grammar-next{
+  min-height:44px;
+  box-sizing:border-box;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* Focus visibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid rgba(59,130,246,.22)!important;
+  outline-offset:2px!important;
+}
+
+/* Feedback/status language */
+[aria-live="polite"],
+[role="status"]{
+  line-height:1.5;
+}
+
+/* Readability floor for user metadata */
+.main-content small,
+.game-page small,
+.result-page small,
+.grammar-game-page small{
+  font-size:10px;
+  line-height:1.4;
+}
+
+/* Mobile navigation remains 4 core destinations */
+@media(max-width:700px){
+  .sidebar-nav.sidebar-nav-expanded{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+
+  .nav-item{
+    font-size:10px!important;
+  }
+}

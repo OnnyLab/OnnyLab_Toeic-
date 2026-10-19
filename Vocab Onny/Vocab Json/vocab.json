@@ -1,0 +1,272 @@
+[
+  {
+    "word": "allocate",
+    "thai": "จัดสรร",
+    "meaning": "to give something to someone for a particular purpose",
+    "exampleSentence": "The company allocated more funds to the marketing department.",
+    "synonyms": ["assign", "distribute", "designate"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "acquire",
+    "thai": "ได้รับ, ได้มา, เข้าซื้อ",
+    "meaning": "to obtain or gain something",
+    "exampleSentence": "The company plans to acquire a smaller competitor next year.",
+    "synonyms": ["obtain", "gain", "purchase"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "approve",
+    "thai": "อนุมัติ, เห็นชอบ",
+    "meaning": "to officially accept or agree to something",
+    "exampleSentence": "The manager approved the employee's request for leave.",
+    "synonyms": ["authorize", "accept", "endorse"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "attend",
+    "thai": "เข้าร่วม, เข้าร่วมงาน",
+    "meaning": "to be present at an event, meeting, or place",
+    "exampleSentence": "All employees are required to attend the annual meeting.",
+    "synonyms": ["join", "participate", "appear"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "available",
+    "thai": "ว่าง, พร้อมใช้งาน, มีอยู่",
+    "meaning": "ready to be used, obtained, or contacted",
+    "exampleSentence": "The conference room is available after three o'clock.",
+    "synonyms": ["accessible", "obtainable", "ready"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "benefit",
+    "thai": "ประโยชน์, ผลประโยชน์",
+    "meaning": "an advantage or positive effect",
+    "exampleSentence": "Employees receive several benefits in addition to their salary.",
+    "synonyms": ["advantage", "gain", "profit"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "confirm",
+    "thai": "ยืนยัน",
+    "meaning": "to state or show that something is definitely true or correct",
+    "exampleSentence": "Please confirm your reservation by Friday.",
+    "synonyms": ["verify", "validate", "affirm"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "consider",
+    "thai": "พิจารณา",
+    "meaning": "to think carefully about something before making a decision",
+    "exampleSentence": "The committee will consider the proposal at its next meeting.",
+    "synonyms": ["evaluate", "examine", "contemplate"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "delay",
+    "thai": "ล่าช้า, เลื่อน",
+    "meaning": "to make something happen later than planned",
+    "exampleSentence": "Bad weather delayed the delivery by two days.",
+    "synonyms": ["postpone", "defer", "hold up"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "deliver",
+    "thai": "จัดส่ง, ส่งมอบ",
+    "meaning": "to take goods, documents, or messages to a person or place",
+    "exampleSentence": "The supplier will deliver the equipment tomorrow morning.",
+    "synonyms": ["transport", "distribute", "provide"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "efficient",
+    "thai": "มีประสิทธิภาพ",
+    "meaning": "working well without wasting time, energy, or resources",
+    "exampleSentence": "The new system is more efficient than the previous one.",
+    "synonyms": ["effective", "productive", "competent"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "estimate",
+    "thai": "ประมาณการ, ประเมิน",
+    "meaning": "to roughly calculate the cost, size, value, or amount of something",
+    "exampleSentence": "We estimate that the repairs will cost about five thousand dollars.",
+    "synonyms": ["approximate", "calculate", "assess"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "expand",
+    "thai": "ขยาย, ขยายตัว",
+    "meaning": "to increase in size, number, or importance",
+    "exampleSentence": "The company intends to expand its operations in Asia.",
+    "synonyms": ["enlarge", "extend", "increase"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "implement",
+    "thai": "ดำเนินการ, นำไปใช้",
+    "meaning": "to put a plan, decision, or system into effect",
+    "exampleSentence": "The company will implement the new policy next month.",
+    "synonyms": ["execute", "apply", "carry out"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "increase",
+    "thai": "เพิ่ม, เพิ่มขึ้น",
+    "meaning": "to become or make something greater in amount, number, or size",
+    "exampleSentence": "The company hopes to increase sales by ten percent this year.",
+    "synonyms": ["raise", "boost", "expand"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "maintain",
+    "thai": "รักษา, บำรุงรักษา",
+    "meaning": "to keep something in good condition or at the same level",
+    "exampleSentence": "Regular inspections help maintain the equipment in good condition.",
+    "synonyms": ["preserve", "sustain", "retain"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "negotiate",
+    "thai": "เจรจา, ต่อรอง",
+    "meaning": "to discuss something formally in order to reach an agreement",
+    "exampleSentence": "The company is negotiating a new contract with the supplier.",
+    "synonyms": ["bargain", "discuss", "mediate"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "notify",
+    "thai": "แจ้ง, แจ้งให้ทราบ",
+    "meaning": "to formally tell someone about something",
+    "exampleSentence": "Customers will be notified of any changes to the schedule.",
+    "synonyms": ["inform", "advise", "alert"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "obtain",
+    "thai": "ได้รับ, ได้มา",
+    "meaning": "to get something through effort or request",
+    "exampleSentence": "Applicants must obtain permission before entering the facility.",
+    "synonyms": ["acquire", "gain", "secure"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "participate",
+    "thai": "เข้าร่วม, มีส่วนร่วม",
+    "meaning": "to take part in an activity or event",
+    "exampleSentence": "More than fifty employees participated in the training session.",
+    "synonyms": ["join", "engage", "take part"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "postpone",
+    "thai": "เลื่อนออกไป",
+    "meaning": "to arrange for something to happen at a later time",
+    "exampleSentence": "The meeting was postponed until next Monday.",
+    "synonyms": ["delay", "defer", "reschedule"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "purchase",
+    "thai": "ซื้อ, การซื้อ",
+    "meaning": "to buy something",
+    "exampleSentence": "Customers can purchase tickets through the company's website.",
+    "synonyms": ["buy", "acquire", "obtain"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "recommend",
+    "thai": "แนะนำ",
+    "meaning": "to suggest that someone should do or choose something",
+    "exampleSentence": "The consultant recommended upgrading the computer system.",
+    "synonyms": ["suggest", "advise", "propose"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "require",
+    "thai": "ต้องการ, กำหนดให้ต้องมี",
+    "meaning": "to need something or make something necessary",
+    "exampleSentence": "This position requires at least two years of experience.",
+    "synonyms": ["need", "demand", "necessitate"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "schedule",
+    "thai": "กำหนดเวลา, ตารางเวลา",
+    "meaning": "to arrange for something to happen at a particular time",
+    "exampleSentence": "The interview has been scheduled for Thursday morning.",
+    "synonyms": ["arrange", "plan", "organize"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "submit",
+    "thai": "ส่ง, ยื่น",
+    "meaning": "to formally give a document or request to someone for consideration",
+    "exampleSentence": "Please submit your expense report by the end of the week.",
+    "synonyms": ["present", "provide", "file"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "sufficient",
+    "thai": "เพียงพอ",
+    "meaning": "enough for a particular purpose",
+    "exampleSentence": "There is sufficient space in the warehouse for the new equipment.",
+    "synonyms": ["adequate", "enough", "satisfactory"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "temporary",
+    "thai": "ชั่วคราว",
+    "meaning": "lasting for only a limited period of time",
+    "exampleSentence": "The company hired temporary workers during the busy season.",
+    "synonyms": ["short-term", "provisional", "interim"],
+    "level": "B1",
+    "active": true
+  },
+  {
+    "word": "vacant",
+    "thai": "ว่าง, ไม่มีผู้ครอบครอง",
+    "meaning": "not currently occupied or filled",
+    "exampleSentence": "There are currently three vacant positions in the sales department.",
+    "synonyms": ["empty", "unoccupied", "available"],
+    "level": "B2",
+    "active": true
+  },
+  {
+    "word": "verify",
+    "thai": "ตรวจสอบ, ยืนยันความถูกต้อง",
+    "meaning": "to check that something is true, accurate, or correct",
+    "exampleSentence": "Please verify the customer's information before processing the order.",
+    "synonyms": ["confirm", "validate", "check"],
+    "level": "B2",
+    "active": true
+  }
+]

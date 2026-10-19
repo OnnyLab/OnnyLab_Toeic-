@@ -1,0 +1,609 @@
+/* =========================================================
+   ONNYLAB — ADMIN POLISH LAYER
+   Loaded last on every Admin page.
+========================================================= */
+
+:root{
+  --admin-control-h:44px;
+  --admin-control-radius:11px;
+  --admin-card-radius:18px;
+  --admin-font-micro:10px;
+  --admin-font-caption:11px;
+  --admin-font-body:13px;
+  --admin-font-button:12px;
+}
+
+/* TYPE SCALE */
+.admin-main{
+  font-size:var(--admin-font-body);
+}
+
+.admin-eyebrow,
+.eyebrow,
+.admin-nav-group-label,
+.vocab-v3-kicker,
+.users-v3-kicker,
+.settings-v3-kicker,
+.data-v3-kicker,
+.settings-section-head>div>span,
+.data-section-head>div>span,
+.grammar-admin-hero .eyebrow{
+  font-size:10px!important;
+  line-height:1.35!important;
+}
+
+.admin-profile-v2-copy span,
+.admin-profile-v2-copy small,
+.vocab-stat-card span,
+.users-page .user-summary-card span,
+.users-page .user-summary-card small,
+.settings-overview-grid span,
+.settings-overview-grid small,
+.data-v3-summary span,
+.data-v3-summary small,
+.health-overview span,
+.learning-user-summary span,
+.settings-mode-head span,
+.settings-mode-head p,
+.setting-switch-card small,
+.setting-field>span,
+.setting-field>small,
+.data-card-v3-head span,
+.data-card-v3-head p,
+.data-settings-list span,
+.data-v3-note,
+.data-restore-info p,
+.data-file-drop small,
+.selected-user-meta,
+.health-item small,
+.danger-card>div>span,
+.danger-card p{
+  font-size:11px!important;
+  line-height:1.45!important;
+}
+
+.admin-nav-item{
+  font-size:13px!important;
+}
+
+.admin-status,
+.admin-main p,
+.admin-main td,
+.admin-main label{
+  line-height:1.5;
+}
+
+/* CONTROL TOKENS */
+.admin-main button,
+.admin-main .primary-button,
+.admin-main .secondary-button,
+.admin-main .save-button,
+.admin-main .data-v3-button,
+.admin-main .settings-v3-save,
+.admin-main .users-v3-hero-button,
+.admin-main .vocab-hero-button,
+.admin-main .mode-reset-button{
+  min-height:var(--admin-control-h);
+  border-radius:var(--admin-control-radius)!important;
+  font-size:var(--admin-font-button)!important;
+  font-weight:800!important;
+  box-sizing:border-box;
+}
+
+.admin-main input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.admin-main select{
+  min-height:var(--admin-control-h)!important;
+  font-size:12px!important;
+  box-sizing:border-box;
+}
+
+.admin-main textarea{
+  min-height:96px;
+  font-size:12px!important;
+  line-height:1.5;
+}
+
+.admin-main input::placeholder,
+.admin-main textarea::placeholder{
+  color:#9AA7B7;
+}
+
+/* SURFACE TOKENS */
+.admin-summary-card,
+.admin-menu-card,
+.vocab-stat-card,
+.vocab-table-card,
+.users-page .user-summary-card,
+.users-page .users-table-card,
+.settings-mode-card,
+.settings-global-card,
+.settings-overview-grid article,
+.data-v3-card,
+.data-v3-summary article,
+.health-overview article,
+.grammar-editor,
+.grammar-bank,
+.grammar-admin-stats article{
+  border-radius:var(--admin-card-radius)!important;
+}
+
+/* STANDARD FEEDBACK STATES */
+.admin-feedback-state,
+.admin-empty-state,
+.admin-loading-state,
+.admin-error-state,
+.admin-success-state{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:14px 16px;
+  border:1px solid #E3E8F0;
+  border-radius:12px;
+  background:#fff;
+  color:#5B7088;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.admin-loading-state,
+.data-message.info,
+.settings-message.info{
+  border-color:#D7E8FC!important;
+  background:#F3F8FF!important;
+  color:#356B9F!important;
+}
+
+.admin-error-state,
+.data-message.error,
+.settings-message.error,
+.user-message.error{
+  border-color:#F2D3D8!important;
+  background:#FFF5F6!important;
+  color:#A94753!important;
+}
+
+.admin-success-state,
+.data-message.success,
+.settings-message.success,
+.user-message.success{
+  border-color:#D5EDDF!important;
+  background:#F3FBF6!important;
+  color:#187B4F!important;
+}
+
+.admin-empty-state{
+  justify-content:center;
+  text-align:center;
+  border-style:dashed;
+  background:#FAFCFF;
+  color:#7E8EA2;
+}
+
+/* Existing empty / loading surfaces */
+.health-empty,
+.grammar-empty-state,
+.vocab-empty-state,
+.users-empty-state{
+  padding:28px 18px!important;
+  border:1px dashed #D8E1EC!important;
+  border-radius:14px!important;
+  background:#FAFCFF!important;
+  color:#7E8EA2!important;
+  font-size:12px!important;
+  text-align:center;
+}
+
+/* ADMIN MOBILE: 4 primary items + More */
+.admin-mobile-more{
+  display:none;
+}
+
+.admin-mobile-more-menu{
+  display:none;
+}
+
+@media(max-width:700px){
+  .admin-nav-v2{
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  }
+
+  .admin-nav-item{
+    font-size:10px!important;
+  }
+
+  .admin-nav-item:not(.admin-mobile-primary){
+    display:none!important;
+  }
+
+  .admin-mobile-more{
+    display:flex;
+    min-height:52px;
+    padding:5px 2px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    border:0;
+    border-radius:10px;
+    color:rgba(255,255,255,.70);
+    background:transparent;
+    font-size:10px!important;
+    font-weight:800;
+    cursor:pointer;
+  }
+
+  .admin-mobile-more.active{
+    color:#fff;
+    background:linear-gradient(90deg,rgba(59,130,246,.26),rgba(56,189,248,.12));
+  }
+
+  .admin-mobile-more .admin-nav-icon{
+    display:grid;
+    place-items:center;
+  }
+
+  .admin-mobile-more-menu{
+    position:fixed;
+    z-index:1200;
+    right:12px;
+    bottom:82px;
+    width:min(270px,calc(100vw - 24px));
+    padding:8px;
+    border:1px solid #DCE5F0;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 18px 50px rgba(16,35,63,.22);
+  }
+
+  .admin-mobile-more-menu.show{
+    display:grid;
+    gap:4px;
+  }
+
+  .admin-mobile-more-menu a,
+  .admin-mobile-more-menu button{
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 12px;
+    border:0;
+    border-radius:10px!important;
+    background:transparent;
+    color:#355A80;
+    font-size:12px!important;
+    font-weight:800;
+    text-decoration:none;
+    text-align:left;
+  }
+
+  .admin-mobile-more-menu a:hover,
+  .admin-mobile-more-menu button:hover{
+    background:#F2F6FB;
+  }
+
+  .admin-mobile-more-menu .danger{
+    color:#B64B57;
+  }
+}
+
+/* Existing Admin state classes mapped to the shared state language */
+.data-message,
+.settings-message,
+.user-message,
+.import-message,
+.grammar-import-message,
+.form-message,
+.message{
+  min-height:42px;
+  box-sizing:border-box;
+  padding:12px 14px!important;
+  border:1px solid #E3E8F0!important;
+  border-radius:12px!important;
+  font-size:12px!important;
+  line-height:1.5!important;
+}
+
+.users-empty,
+.empty-table,
+.health-empty{
+  padding:28px 18px!important;
+  border:1px dashed #D8E1EC!important;
+  border-radius:14px!important;
+  background:#FAFCFF!important;
+  color:#7E8EA2!important;
+  font-size:12px!important;
+  line-height:1.55!important;
+  text-align:center;
+}
+
+.loading-dot:not(.ready){
+  animation:adminPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes adminPulse{
+  0%,100%{opacity:.45}
+  50%{opacity:1}
+}
+
+@media(max-width:700px){
+  .admin-nav-v2{
+    width:80%!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    padding-right:4px;
+    box-sizing:border-box;
+  }
+
+  .admin-mobile-more{
+    position:absolute;
+    right:8px;
+    top:8px;
+    width:calc(20% - 10px);
+    height:52px;
+    min-height:52px!important;
+  }
+}
+
+/* Compact icon-button exceptions */
+.admin-main .modal-close,
+.admin-main .user-modal-close,
+.admin-main .learner-drawer-close{
+  min-height:34px!important;
+  width:34px;
+  height:34px;
+  padding:0!important;
+  border-radius:10px!important;
+  font-size:18px!important;
+}
+
+/* =========================================================
+   FINAL READABILITY + CONTROL CONSISTENCY
+========================================================= */
+
+/* Readability floor */
+.admin-main small,
+.admin-main .helper-text,
+.admin-main .field-help,
+.admin-main .form-hint,
+.admin-main .nav-badge,
+.admin-main .badge,
+.admin-main .status-badge,
+.admin-main .grammar-question-mode,
+.admin-main .grammar-question-level,
+.admin-main th{
+  font-size:10px!important;
+  line-height:1.4!important;
+}
+
+.admin-main td,
+.admin-main input,
+.admin-main select,
+.admin-main textarea{
+  font-size:12px!important;
+}
+
+.admin-main p{
+  font-size:max(11px,1em);
+}
+
+/* Common action sizing */
+.admin-main .primary-button,
+.admin-main .secondary-button,
+.admin-main .save-button,
+.admin-main .settings-v3-save,
+.admin-main .data-v3-button,
+.admin-main .users-v3-hero-button,
+.admin-main .vocab-hero-button,
+.admin-main .grammar-hero-actions button{
+  min-height:44px!important;
+  padding:0 14px!important;
+  line-height:1.2!important;
+}
+
+/* Table rhythm */
+.admin-main table th{
+  min-height:38px;
+  padding-top:11px!important;
+  padding-bottom:11px!important;
+}
+
+.admin-main table td{
+  padding-top:12px!important;
+  padding-bottom:12px!important;
+}
+
+/* Consistent disabled state */
+.admin-main button:disabled,
+.admin-main input:disabled,
+.admin-main select:disabled,
+.admin-main textarea:disabled{
+  opacity:.55!important;
+  cursor:not-allowed!important;
+}
+
+/* Consistent focus visibility */
+.admin-main button:focus-visible,
+.admin-main a:focus-visible{
+  outline:3px solid rgba(59,130,246,.24)!important;
+  outline-offset:2px!important;
+}
+
+/* Mobile admin: 4 core + More */
+@media(max-width:700px){
+  .admin-sidebar{
+    overflow:visible!important;
+  }
+
+  .admin-nav-v2{
+    width:80%!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+
+  .admin-nav-item,
+  .admin-mobile-more{
+    font-size:10px!important;
+  }
+
+  .admin-nav-label{
+    overflow:visible!important;
+    text-overflow:clip!important;
+  }
+}
+
+/* Game Settings sidebar hardening */
+.admin-sidebar{
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex-direction:column!important;
+  height:100vh!important;
+  min-height:100vh!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+
+.admin-nav-v2{
+  width:100%!important;
+  min-width:0!important;
+}
+
+.admin-nav-group,
+.admin-nav-item{
+  min-width:0!important;
+}
+
+.admin-nav-label{
+  min-width:0!important;
+  white-space:normal!important;
+  line-height:1.25!important;
+}
+
+.admin-sidebar-bottom-v2{
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* FINAL FIX: mobile-only admin More controls */
+.admin-mobile-more,
+.admin-mobile-more-menu{
+  display:none!important;
+}
+
+@media(max-width:700px){
+  .admin-mobile-more{
+    display:flex!important;
+  }
+
+  .admin-mobile-more-menu.show{
+    display:grid!important;
+  }
+}
+
+/* Active state for the mobile-only More button without global .active */
+@media(max-width:700px){
+  .admin-mobile-more.is-current-system{
+    color:#fff!important;
+    background:linear-gradient(90deg,rgba(59,130,246,.26),rgba(56,189,248,.12))!important;
+  }
+}
+
+@media(min-width:701px){
+  .admin-mobile-more,
+  .admin-mobile-more.is-current-system,
+  .admin-mobile-more-menu,
+  .admin-mobile-more-menu.show{
+    display:none!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+    position:absolute!important;
+    width:0!important;
+    height:0!important;
+    min-width:0!important;
+    min-height:0!important;
+    padding:0!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+}
+
+/* =========================================================
+   FINAL ADMIN SIDEBAR DIMENSION LOCK
+   One canonical size across every Admin page.
+========================================================= */
+
+:root{
+  --admin-sidebar-width:236px!important;
+}
+
+.admin-sidebar{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  bottom:0!important;
+  width:236px!important;
+  min-width:236px!important;
+  max-width:236px!important;
+  height:100vh!important;
+  min-height:100vh!important;
+  padding:22px 16px 18px!important;
+  box-sizing:border-box!important;
+  flex:0 0 236px!important;
+  border-radius:0!important;
+}
+
+.admin-main{
+  margin-left:236px!important;
+  width:auto!important;
+  min-width:0!important;
+}
+
+/* Tablet rail */
+@media (min-width:701px) and (max-width:1120px){
+  :root{
+    --admin-sidebar-width:84px!important;
+  }
+
+  .admin-sidebar{
+    width:84px!important;
+    min-width:84px!important;
+    max-width:84px!important;
+    height:100vh!important;
+    min-height:100vh!important;
+    padding:18px 12px!important;
+    flex-basis:84px!important;
+    border-radius:0!important;
+  }
+
+  .admin-main{
+    margin-left:84px!important;
+  }
+}
+
+/* Mobile bottom navigation */
+@media (max-width:700px){
+  :root{
+    --admin-sidebar-width:0px!important;
+  }
+
+  .admin-sidebar{
+    position:fixed!important;
+    top:auto!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100%!important;
+    min-width:100%!important;
+    max-width:100%!important;
+    height:72px!important;
+    min-height:72px!important;
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom))!important;
+    flex-basis:auto!important;
+    border-radius:0!important;
+    overflow:visible!important;
+  }
+
+  .admin-main{
+    margin-left:0!important;
+    width:100%!important;
+    padding-bottom:92px!important;
+  }
+}

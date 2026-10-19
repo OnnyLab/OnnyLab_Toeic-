@@ -1,0 +1,1495 @@
+/* =========================================================
+   VOCAB ONNY
+   USER BLUE THEME
+
+   COLORS
+   #E3F2FD
+   #90CAF9
+   #2196F3
+   #0D47A1
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+  --user-bg:
+    #F5FBFF;
+
+  --user-bg-blue:
+    #E3F2FD;
+
+  --user-light:
+    #90CAF9;
+
+  --user-primary:
+    #2196F3;
+
+  --user-primary-hover:
+    #1976D2;
+
+  --user-dark:
+    #0D47A1;
+
+  --user-text:
+    #173A63;
+
+  --user-muted:
+    #7891AB;
+
+  --user-border:
+    #D4E8F8;
+
+  --user-card:
+    #FFFFFF;
+
+  --user-success:
+    #2E7D32;
+
+  --user-danger:
+    #D32F2F;
+
+  --user-warning:
+    #F59E0B;
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+/* Shared OnnyLab logo used across user pages.
+   Keep it compact and out of normal document flow so it never stretches a page. */
+.onnylab-main-logo {
+  position: fixed !important;
+  top: 16px !important;
+  right: 20px !important;
+  z-index: 200 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 112px !important;
+  height: auto !important;
+  max-width: 112px !important;
+
+  margin: 0 !important;
+  padding: 6px 8px !important;
+
+  border-radius: 12px !important;
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: 0 6px 18px rgba(13,71,161,.08) !important;
+  backdrop-filter: blur(10px);
+
+  overflow: hidden !important;
+  line-height: 0 !important;
+  text-decoration: none !important;
+}
+
+.onnylab-main-logo img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 34px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 950px) {
+  .onnylab-main-logo {
+    top: 12px !important;
+    right: 12px !important;
+    width: 92px !important;
+    max-width: 92px !important;
+    padding: 5px 7px !important;
+  }
+
+  .onnylab-main-logo img {
+    max-height: 29px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .onnylab-main-logo {
+    width: 82px !important;
+    max-width: 82px !important;
+  }
+
+  .onnylab-main-logo img {
+    max-height: 26px !important;
+  }
+}
+
+body {
+  color:
+    var(--user-text) !important;
+
+  background:
+    var(--user-bg) !important;
+}
+
+
+.app-layout,
+.main-content,
+.games-page,
+.dashboard-page,
+.profile-page,
+.history-page {
+  background:
+    linear-gradient(
+      135deg,
+      #F8FCFF 0%,
+      #EFF8FF 48%,
+      #E3F2FD 100%
+    ) !important;
+}
+
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  /* Shared user sidebar geometry — keep every user page identical */
+  width: 240px !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  padding: 28px 20px !important;
+  box-sizing: border-box !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0D47A1 0%,
+      #1565C0 48%,
+      #2196F3 100%
+    ) !important;
+
+  box-shadow:
+    8px 0 30px
+    rgba(13, 71, 161, 0.10) !important;
+}
+
+/* Keep sidebar contents the same size on every user page */
+.sidebar-brand,
+.sidebar-profile,
+.sidebar-nav,
+.logout-button {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.sidebar-brand {
+  gap: 12px !important;
+  margin-bottom: 34px !important;
+}
+
+.sidebar-brand .brand-logo {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  border-radius: 14px !important;
+  font-size: 21px !important;
+  font-weight: 800 !important;
+}
+
+.sidebar-brand .brand-text strong {
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 1.5px !important;
+}
+
+.sidebar-brand .brand-text span {
+  margin-top: 2px !important;
+  font-size: 10px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 4px !important;
+}
+
+.sidebar-profile {
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  padding: 13px !important;
+  margin-bottom: 28px !important;
+  border-radius: 17px !important;
+}
+
+.sidebar-avatar {
+  width: 43px !important;
+  min-width: 43px !important;
+  height: 43px !important;
+  font-size: 16px !important;
+}
+
+.sidebar-user strong {
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+}
+
+.sidebar-user span {
+  margin-top: 3px !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+.profile-arrow {
+  font-size: 22px !important;
+}
+
+.sidebar-nav {
+  display: grid !important;
+  gap: 7px !important;
+}
+
+.nav-item {
+  width: 100% !important;
+  min-height: 0 !important;
+  gap: 13px !important;
+  padding: 12px 14px !important;
+  border-radius: 13px !important;
+  box-sizing: border-box !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+  line-height: 1.2 !important;
+}
+
+.nav-icon {
+  width: 22px !important;
+  min-width: 22px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+}
+
+.logout-button {
+  gap: 8px !important;
+  padding: 12px !important;
+  border-radius: 13px !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+}
+
+.main-content {
+  margin-left: 240px !important;
+}
+
+
+.sidebar-brand .brand-logo {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.08) !important;
+}
+
+
+.sidebar-brand strong,
+.sidebar-brand span {
+  color:
+    #FFFFFF !important;
+}
+
+
+.sidebar-brand span {
+  opacity:
+    0.7;
+}
+
+
+/* PROFILE */
+
+.sidebar-profile {
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.20) !important;
+
+  background:
+    rgba(255, 255, 255, 0.08) !important;
+}
+
+
+.sidebar-profile:hover {
+  background:
+    rgba(255, 255, 255, 0.14) !important;
+}
+
+
+.sidebar-avatar {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    #FFFFFF !important;
+}
+
+
+.sidebar-user strong {
+  color:
+    #FFFFFF !important;
+}
+
+
+.sidebar-user span {
+  color:
+    rgba(255, 255, 255, 0.68) !important;
+}
+
+
+.profile-arrow {
+  color:
+    rgba(255, 255, 255, 0.75) !important;
+}
+
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-item {
+  color:
+    rgba(255, 255, 255, 0.74) !important;
+
+  background:
+    transparent !important;
+}
+
+
+.nav-item:hover {
+  color:
+    #FFFFFF !important;
+
+  background:
+    rgba(255, 255, 255, 0.10) !important;
+}
+
+
+.nav-item.active {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.08) !important;
+}
+
+
+.nav-item.active .nav-icon {
+  color:
+    var(--user-primary) !important;
+}
+
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-button {
+  color:
+    #FFFFFF !important;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.24) !important;
+
+  background:
+    rgba(255, 255, 255, 0.08) !important;
+}
+
+
+.logout-button:hover {
+  background:
+    rgba(255, 255, 255, 0.15) !important;
+}
+
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+  background:
+    transparent !important;
+}
+
+
+.eyebrow,
+.section-label,
+.hero-label {
+  color:
+    var(--user-primary) !important;
+}
+
+
+.topbar h1,
+.section-header h2,
+.games-header h1,
+.dashboard-header h1 {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.topbar-description,
+.section-header p,
+.games-header p {
+  color:
+    var(--user-muted) !important;
+}
+
+
+.online-status {
+  color:
+    #248250 !important;
+
+  border:
+    1px solid
+    #C9EBD8 !important;
+
+  background:
+    #ECF9F2 !important;
+}
+
+
+.online-status .status-dot {
+  background:
+    #32C578 !important;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(50, 197, 120, 0.11) !important;
+}
+
+
+
+/* =========================================================
+   GAMES HERO
+========================================================= */
+
+/*
+   Hero ในรูปปัจจุบันยังเป็นม่วง
+   กลุ่ม selector ด้านล่างจะเปลี่ยนให้เป็นฟ้า
+*/
+
+.games-hero,
+.practice-hero,
+.dashboard-hero,
+.hero-section {
+  color:
+    #FFFFFF !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0D47A1 0%,
+      #1976D2 42%,
+      #2196F3 72%,
+      #64B5F6 100%
+    ) !important;
+
+  box-shadow:
+    0 20px 45px
+    rgba(13, 71, 161, 0.18) !important;
+}
+
+
+.games-hero::before,
+.games-hero::after,
+.practice-hero::before,
+.practice-hero::after,
+.dashboard-hero::before,
+.dashboard-hero::after {
+  background:
+    rgba(255, 255, 255, 0.07) !important;
+}
+
+
+.games-hero .hero-label,
+.practice-hero .hero-label,
+.dashboard-hero .hero-label {
+  color:
+    rgba(255, 255, 255, 0.72) !important;
+}
+
+
+.games-hero h1,
+.games-hero h2,
+.practice-hero h1,
+.practice-hero h2,
+.dashboard-hero h1,
+.dashboard-hero h2 {
+  color:
+    #FFFFFF !important;
+}
+
+
+.games-hero p,
+.practice-hero p,
+.dashboard-hero p {
+  color:
+    rgba(255, 255, 255, 0.76) !important;
+}
+
+
+
+/* =========================================================
+   HERO DECORATION / Aa CIRCLE
+========================================================= */
+
+.hero-art,
+.hero-visual,
+.hero-circle,
+.hero-word-circle,
+.practice-visual {
+  border-color:
+    rgba(255, 255, 255, 0.18) !important;
+}
+
+
+.hero-circle,
+.hero-word-circle,
+.practice-word {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 15px 35px
+    rgba(13, 71, 161, 0.12) !important;
+}
+
+
+.hero-badge,
+.word-badge,
+.practice-badge {
+  color:
+    #FFFFFF !important;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.28) !important;
+
+  background:
+    rgba(255, 255, 255, 0.10) !important;
+}
+
+
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
+
+.hero-button,
+.start-button,
+.primary-game-button,
+.start-translation-button {
+  color:
+    #FFFFFF !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      #42A5F5,
+      #2196F3
+    ) !important;
+
+  box-shadow:
+    0 10px 24px
+    rgba(13, 71, 161, 0.20) !important;
+}
+
+
+.hero-button:hover,
+.start-button:hover,
+.primary-game-button:hover,
+.start-translation-button:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    linear-gradient(
+      90deg,
+      #2196F3,
+      #1976D2
+    ) !important;
+}
+
+
+
+/* =========================================================
+   PLAYER SUMMARY
+========================================================= */
+
+.player-card,
+.player-summary-card,
+.profile-summary-card {
+  border:
+    1px solid
+    var(--user-border) !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 8px 26px
+    rgba(13, 71, 161, 0.06) !important;
+}
+
+
+.player-card .player-avatar,
+.player-summary-card .player-avatar {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+.player-card strong,
+.player-summary-card strong {
+  color:
+    var(--user-dark) !important;
+}
+
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.stat-card,
+.game-card,
+.mode-card,
+.panel,
+.history-card,
+.profile-card,
+.summary-card {
+  border:
+    1px solid
+    var(--user-border) !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 8px 26px
+    rgba(13, 71, 161, 0.055) !important;
+}
+
+
+.stat-card:hover,
+.game-card:hover,
+.mode-card:hover {
+  border-color:
+    #AED8F7 !important;
+
+  box-shadow:
+    0 14px 35px
+    rgba(13, 71, 161, 0.10) !important;
+}
+
+
+
+/* =========================================================
+   STAT ICONS
+========================================================= */
+
+.stat-icon,
+.summary-icon {
+  color:
+    var(--user-primary) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+.stat-card.success .stat-icon {
+  color:
+    #2E7D32 !important;
+
+  background:
+    #E8F5E9 !important;
+}
+
+
+.stat-card.warning .stat-icon {
+  color:
+    #F59E0B !important;
+
+  background:
+    #FFF8E1 !important;
+}
+
+
+.stat-card.danger .stat-icon {
+  color:
+    #D32F2F !important;
+
+  background:
+    #FFEBEE !important;
+}
+
+
+
+/* =========================================================
+   PLAYER CARD ICON
+========================================================= */
+
+.player-icon,
+.player-initial,
+.profile-mini-avatar {
+  color:
+    var(--user-primary) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+
+/* =========================================================
+   PRACTICE MODE SECTION
+========================================================= */
+
+.practice-section,
+.game-modes-section {
+  background:
+    transparent !important;
+}
+
+
+.practice-section h2,
+.game-modes-section h2,
+.practice-title {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.practice-section .eyebrow,
+.game-modes-section .eyebrow {
+  color:
+    var(--user-primary) !important;
+}
+
+
+
+/* =========================================================
+   GAME MODE CARDS
+========================================================= */
+
+.game-card,
+.mode-card,
+.practice-card {
+  color:
+    var(--user-text) !important;
+
+  border:
+    1px solid
+    var(--user-border) !important;
+
+  background:
+    #FFFFFF !important;
+}
+
+
+.game-card:hover,
+.mode-card:hover,
+.practice-card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--user-light) !important;
+
+  box-shadow:
+    0 14px 35px
+    rgba(33, 150, 243, 0.12) !important;
+}
+
+
+.game-card-icon,
+.mode-icon,
+.practice-icon {
+  color:
+    var(--user-primary) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+.game-card h3,
+.mode-card h3,
+.practice-card h3 {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.game-card p,
+.mode-card p,
+.practice-card p {
+  color:
+    var(--user-muted) !important;
+}
+
+
+
+/* =========================================================
+   DASHBOARD HERO
+========================================================= */
+
+.dashboard-hero {
+  background:
+    linear-gradient(
+      135deg,
+      #0D47A1 0%,
+      #1976D2 48%,
+      #42A5F5 100%
+    ) !important;
+}
+
+
+
+/* =========================================================
+   DASHBOARD PROGRESS
+========================================================= */
+
+.progress-track {
+  background:
+    #E4F2FC !important;
+}
+
+
+.progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #90CAF9,
+      #2196F3
+    ) !important;
+}
+
+
+.mode-value {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.mode-info strong {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.mode-info span {
+  color:
+    var(--user-muted) !important;
+}
+
+
+
+/* =========================================================
+   MASTERY
+========================================================= */
+
+.mastery-item {
+  border-color:
+    var(--user-border) !important;
+}
+
+
+.mastery-item strong {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.mastery-dot.new {
+  background:
+    #B0BEC5 !important;
+}
+
+
+.mastery-dot.learning {
+  background:
+    #90CAF9 !important;
+}
+
+
+.mastery-dot.weak {
+  background:
+    #EF5350 !important;
+}
+
+
+.mastery-dot.familiar {
+  background:
+    #42A5F5 !important;
+}
+
+
+.mastery-dot.mastered {
+  background:
+    #2E7D32 !important;
+}
+
+
+
+/* =========================================================
+   GAME SCREEN
+========================================================= */
+
+.question-card,
+.game-question-card {
+  border:
+    1px solid
+    var(--user-border) !important;
+
+  background:
+    #FFFFFF !important;
+
+  box-shadow:
+    0 12px 35px
+    rgba(13, 71, 161, 0.08) !important;
+}
+
+
+.question-word,
+.question-title {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.question-subtitle {
+  color:
+    var(--user-muted) !important;
+}
+
+
+
+/* =========================================================
+   ANSWER CHOICES
+========================================================= */
+
+.choice-button,
+.answer-option,
+.game-choice {
+  color:
+    var(--user-text) !important;
+
+  border:
+    1.5px solid
+    var(--user-border) !important;
+
+  background:
+    #FFFFFF !important;
+}
+
+
+.choice-button:hover,
+.answer-option:hover,
+.game-choice:hover {
+  color:
+    var(--user-dark) !important;
+
+  border-color:
+    var(--user-primary) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+.choice-button.selected,
+.answer-option.selected,
+.game-choice.selected {
+  color:
+    var(--user-dark) !important;
+
+  border-color:
+    var(--user-primary) !important;
+
+  background:
+    #D7ECFC !important;
+}
+
+
+.choice-button.correct,
+.answer-option.correct,
+.game-choice.correct {
+  color:
+    #1B5E20 !important;
+
+  border-color:
+    #81C784 !important;
+
+  background:
+    #E8F5E9 !important;
+}
+
+
+.choice-button.wrong,
+.answer-option.wrong,
+.game-choice.wrong {
+  color:
+    #B71C1C !important;
+
+  border-color:
+    #EF9A9A !important;
+
+  background:
+    #FFEBEE !important;
+}
+
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+.timer,
+.game-timer,
+.timer-badge {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+.timer.warning,
+.game-timer.warning {
+  color:
+    #A15C00 !important;
+
+  background:
+    #FFF4D6 !important;
+}
+
+
+.timer.danger,
+.game-timer.danger {
+  color:
+    #B71C1C !important;
+
+  background:
+    #FFEBEE !important;
+}
+
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.history-card {
+  background:
+    #FFFFFF !important;
+}
+
+
+.history-mode,
+.history-badge {
+  color:
+    var(--user-dark) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-card {
+  background:
+    #FFFFFF !important;
+}
+
+
+.profile-avatar,
+.profile-avatar-placeholder {
+  color:
+    #FFFFFF !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #90CAF9,
+      #2196F3
+    ) !important;
+}
+
+
+.profile-card h2,
+.profile-card h3,
+.profile-name {
+  color:
+    var(--user-dark) !important;
+}
+
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+  color:
+    var(--user-muted) !important;
+}
+
+
+.empty-icon {
+  color:
+    var(--user-primary) !important;
+
+  background:
+    var(--user-bg-blue) !important;
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.page-footer {
+  color:
+    #8BA2B9 !important;
+}
+
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.mobile-header {
+  border-bottom:
+    1px solid
+    var(--user-border) !important;
+
+  background:
+    rgba(255, 255, 255, 0.94) !important;
+
+  backdrop-filter:
+    blur(16px);
+}
+
+
+.mobile-brand strong {
+  color:
+    var(--user-dark) !important;
+}
+
+
+.mobile-brand span {
+  color:
+    var(--user-muted) !important;
+}
+
+
+.mobile-profile-button {
+  color:
+    #FFFFFF !important;
+
+  background:
+    var(--user-primary) !important;
+}
+
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+  background:
+    #EFF8FE;
+}
+
+
+::-webkit-scrollbar-thumb {
+  border-radius:
+    999px;
+
+  background:
+    #B7DAF4;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    var(--user-light);
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .sidebar {
+    display: none !important;
+    background:
+      linear-gradient(
+        135deg,
+        #0D47A1,
+        #2196F3
+      ) !important;
+  }
+
+
+  .games-hero,
+  .practice-hero,
+  .dashboard-hero,
+  .hero-section {
+    background:
+      linear-gradient(
+        135deg,
+        #0D47A1,
+        #2196F3
+      ) !important;
+  }
+
+}
+
+.sidebar-brand-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar-brand-logo img {
+  display: block;
+  width: 165px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}/* =========================================================
+   USER SIDEBAR V2
+========================================================= */
+.sidebar {
+  width: 232px !important;
+  padding: 22px 14px 18px !important;
+  background:
+    linear-gradient(180deg,#0B3478 0%,#0D47A1 58%,#1565C0 100%) !important;
+  border-right: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: 8px 0 28px rgba(13,71,161,.10) !important;
+}
+.main-content { margin-left: 232px !important; }
+.sidebar-brand {
+  padding: 0 8px !important;
+  margin-bottom: 24px !important;
+}
+.sidebar-profile {
+  padding: 11px !important;
+  margin-bottom: 22px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.07) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+.sidebar-profile:hover {
+  transform: translateY(-1px) !important;
+  background: rgba(255,255,255,.11) !important;
+}
+.sidebar-avatar {
+  width: 38px !important;
+  min-width: 38px !important;
+  height: 38px !important;
+  border: 2px solid rgba(255,255,255,.25) !important;
+  box-shadow: 0 5px 14px rgba(0,0,0,.12) !important;
+}
+.sidebar-nav { gap: 5px !important; }
+.nav-item {
+  position: relative !important;
+  min-height: 44px !important;
+  padding: 10px 11px !important;
+  gap: 11px !important;
+  border-radius: 11px !important;
+  color: rgba(255,255,255,.72) !important;
+  font-size: 12.5px !important;
+  font-weight: 650 !important;
+}
+.nav-item:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,.08) !important;
+  transform: translateX(2px) !important;
+}
+.nav-item.active {
+  color: #fff !important;
+  background: rgba(255,255,255,.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.07) !important;
+}
+.nav-item.active::before {
+  content: "" !important;
+  position: absolute !important;
+  left: -14px !important;
+  top: 10px !important;
+  bottom: 10px !important;
+  width: 3px !important;
+  border-radius: 0 4px 4px 0 !important;
+  background: #90CAF9 !important;
+}
+.nav-icon {
+  width: 24px !important;
+  min-width: 24px !important;
+  height: 24px !important;
+  border-radius: 7px !important;
+  background: rgba(255,255,255,.07) !important;
+  font-size: 0 !important;
+}
+.nav-item.active .nav-icon { background: rgba(255,255,255,.15) !important; }
+.sidebar-nav .nav-item:nth-child(1) .nav-icon::before { content: "◈"; }
+.sidebar-nav .nav-item:nth-child(2) .nav-icon::before { content: "▦"; }
+.sidebar-nav .nav-item:nth-child(3) .nav-icon::before { content: "↯"; }
+.sidebar-nav .nav-item:nth-child(4) .nav-icon::before { content: "◷"; }
+.nav-icon::before { font-size: 14px !important; line-height: 1 !important; }
+.logout-button {
+  min-height: 42px !important;
+  padding: 10px 11px !important;
+  border-radius: 11px !important;
+  border-color: rgba(255,255,255,.12) !important;
+  background: rgba(255,255,255,.04) !important;
+}
+.logout-button:hover {
+  background: rgba(255,255,255,.09) !important;
+  transform: translateY(-1px) !important;
+}
+
+@media (max-width: 1120px) and (min-width: 701px) {
+  .sidebar {
+    display: flex !important;
+    width: 82px !important;
+    padding: 18px 12px !important;
+  }
+  .main-content { margin-left: 82px !important; }
+  .sidebar-brand {
+    justify-content: center !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+  }
+  .sidebar-brand .brand-text,
+  .sidebar-user,
+  .profile-arrow { display: none !important; }
+  .sidebar-brand .brand-logo {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+  }
+  .sidebar-profile {
+    justify-content: center !important;
+    padding: 8px !important;
+    margin-bottom: 18px !important;
+  }
+  .sidebar-profile .sidebar-avatar { margin: 0 !important; }
+  .nav-item {
+    justify-content: center !important;
+    padding: 10px !important;
+  }
+  .nav-item > span:last-child { display: none !important; }
+  .nav-item.active::before { left: -12px !important; }
+  .nav-icon { margin: 0 !important; }
+  .logout-button {
+    justify-content: center !important;
+    padding: 10px !important;
+  }
+  .logout-button > span:last-child { display: none !important; }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: block !important;
+    position: fixed !important;
+    top: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 68px !important;
+    min-height: 68px !important;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important;
+    background: rgba(8,43,98,.97) !important;
+    backdrop-filter: blur(18px) !important;
+    border-top: 1px solid rgba(255,255,255,.10) !important;
+    box-shadow: 0 -10px 28px rgba(13,71,161,.16) !important;
+  }
+  .sidebar-brand,
+  .sidebar-profile,
+  .logout-button { display: none !important; }
+  .sidebar-nav {
+    display: grid !important;
+    grid-template-columns: repeat(4,1fr) !important;
+    gap: 4px !important;
+    height: 100% !important;
+  }
+  .nav-item {
+    min-height: 50px !important;
+    padding: 6px 4px !important;
+    gap: 3px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+  }
+  .nav-item > span:last-child { display: block !important; }
+  .nav-item:hover { transform: none !important; }
+  .nav-item.active::before {
+    left: 22% !important;
+    right: 22% !important;
+    top: -8px !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 3px !important;
+    border-radius: 0 0 4px 4px !important;
+  }
+  .nav-icon {
+    width: 22px !important;
+    min-width: 22px !important;
+    height: 22px !important;
+  }
+  .main-content {
+    margin-left: 0 !important;
+    padding-bottom: 88px !important;
+  }
+}

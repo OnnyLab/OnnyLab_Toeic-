@@ -1,0 +1,254 @@
+.grammar-admin-page {
+  display: grid;
+  gap: 20px;
+}
+
+.grammar-admin-hero,
+.grammar-editor,
+.grammar-bank {
+  padding: 22px;
+  border: 1px solid #dde6f1;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(27, 58, 100, .05);
+}
+
+.grammar-admin-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(135deg, #f4f8ff, #f9f6ff);
+}
+
+.grammar-admin-hero h2,
+.grammar-editor h3,
+.grammar-bank h3 {
+  margin: 4px 0;
+  color: #14345f;
+}
+
+.grammar-admin-hero p,
+.grammar-editor-head span,
+.grammar-bank-head span {
+  color: #72849d;
+}
+
+.grammar-admin-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.grammar-admin-stats article {
+  padding: 16px;
+  border: 1px solid #e1e9f3;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.grammar-admin-stats span {
+  color: #8290a4;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.grammar-admin-stats strong {
+  display: block;
+  margin-top: 7px;
+  color: #17365f;
+  font-size: 28px;
+}
+
+.grammar-editor-head,
+.grammar-bank-head,
+.grammar-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.grammar-editor-head {
+  margin-bottom: 18px;
+}
+
+.grammar-editor-head button,
+.secondary-button {
+  border: 1px solid #d7e1ee;
+  border-radius: 999px;
+  background: #fff;
+  color: #446991;
+  padding: 9px 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#grammarForm {
+  display: grid;
+  gap: 15px;
+}
+
+#grammarForm label {
+  display: grid;
+  gap: 6px;
+  color: #536982;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#grammarForm input,
+#grammarForm select,
+#grammarForm textarea,
+.grammar-filters input,
+.grammar-filters select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9e3ef;
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: #fbfdff;
+  color: #244363;
+  font: inherit;
+}
+
+.grammar-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.grammar-form-grid.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grammar-form-grid.two > div {
+  display: grid;
+  gap: 12px;
+}
+
+.grammar-form-actions {
+  min-height: 42px;
+}
+
+#grammarFormMessage {
+  color: #69809b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.grammar-bank-head {
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.grammar-filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 150px 190px 130px;
+  gap: 8px;
+}
+
+.grammar-question-list {
+  display: grid;
+  gap: 10px;
+}
+
+.grammar-question-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 110px 140px;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid #e1e9f3;
+  border-radius: 15px;
+  background: #fcfdff;
+}
+
+.grammar-question-mode {
+  display: inline-flex;
+  justify-self: start;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #f0ecff;
+  color: #684bd0;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.grammar-question-copy strong {
+  display: block;
+  color: #213f62;
+}
+
+.grammar-question-copy small {
+  display: block;
+  margin-top: 4px;
+  color: #8695a9;
+}
+
+.grammar-status-active {
+  color: #24804b;
+  font-weight: 850;
+}
+
+.grammar-status-inactive {
+  color: #a56a6a;
+  font-weight: 850;
+}
+
+.grammar-row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.grammar-row-actions button {
+  border: 1px solid #dae4ef;
+  border-radius: 9px;
+  background: #fff;
+  padding: 7px 9px;
+  color: #476783;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.grammar-empty-admin {
+  padding: 32px;
+  text-align: center;
+  color: #8090a6;
+  border: 1px dashed #cedaea;
+  border-radius: 16px;
+}
+
+@media (max-width: 1000px) {
+  .grammar-admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grammar-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grammar-question-row {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .grammar-row-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .grammar-admin-hero,
+  .grammar-bank-head {
+    display: grid;
+  }
+
+  .grammar-admin-stats,
+  .grammar-form-grid,
+  .grammar-form-grid.two,
+  .grammar-filters {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Game Settings - OnnyLab</title>
+  <link rel="stylesheet" href="../css/admin/admin.css">
+  <link rel="stylesheet" href="../css/shared/theme.css">
+  <link rel="stylesheet" href="../css/shared/user-theme.css">
+  <link rel="stylesheet" href="../css/admin/admin-v2.css">
+  <link rel="stylesheet" href="../css/admin/settings-v3.css">
+  <link rel="stylesheet" href="../css/admin/admin-polish.css?v=20261001-7">
+  <link rel="stylesheet" href="../css/admin/admin-sidebar-lock.css?v=20261001-2">
+</head>
+
+<body>
+  <div class="admin-layout">
+    <aside id="adminSidebar" class="admin-sidebar"></aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-eyebrow">SYSTEM CONFIGURATION</p>
+          <h1>Game Settings</h1>
+        </div>
+
+        <div class="admin-status">
+          <span class="status-dot"></span>
+          <span id="settingsSyncStatus">Firebase Connected</span>
+        </div>
+      </header>
+
+      <section class="settings-v3-page">
+
+        <section class="settings-v3-hero">
+          <div>
+            <span class="settings-v3-kicker">PRACTICE CONTROL CENTER</span>
+            <h2>Configure every game mode in one place.</h2>
+            <p>
+              ควบคุมจำนวนข้อ เวลา ตัวเลือก การแสดงเฉลย การจำกัดคำตอบผิด
+              และ Global Feedback ของ Vocabulary และ Grammar
+            </p>
+          </div>
+
+          <button
+            id="saveSettingsBtn"
+            class="settings-v3-save"
+            type="button"
+          >
+            Save All Settings
+          </button>
+        </section>
+
+        <div id="settingsMessage" class="settings-message"></div>
+
+        <section class="settings-overview-grid">
+          <article>
+            <span>VOCABULARY MODES</span>
+            <strong>4</strong>
+            <small>Translation · Meaning · Synonym · Review</small>
+          </article>
+          <article>
+            <span>GRAMMAR MODES</span>
+            <strong>4</strong>
+            <small>Part 5 · Fill · Error · Sentence</small>
+          </article>
+          <article>
+            <span>TOTAL MODES</span>
+            <strong>8</strong>
+            <small>controlled from this page</small>
+          </article>
+          <article>
+            <span>GLOBAL FEEDBACK</span>
+            <strong>1</strong>
+            <small>shared wrong-answer experience</small>
+          </article>
+        </section>
+
+        <nav class="settings-tabs" aria-label="Settings sections">
+          <button class="settings-tab active" type="button" data-settings-tab="vocabulary">
+            Vocabulary
+          </button>
+          <button class="settings-tab" type="button" data-settings-tab="grammar">
+            Grammar
+          </button>
+          <button class="settings-tab" type="button" data-settings-tab="global">
+            Global Feedback
+          </button>
+        </nav>
+
+        <section class="settings-tab-panel active" data-settings-panel="vocabulary">
+          <div class="settings-section-head">
+            <div>
+              <span>VOCABULARY PRACTICE</span>
+              <h3>Vocabulary Modes</h3>
+              <p>ตั้งค่ากติกาแต่ละโหมดโดยไม่กระทบโหมดอื่น</p>
+            </div>
+          </div>
+
+          <div class="settings-mode-grid">
+
+            <article class="settings-mode-card" data-mode-card="translation">
+    <div class="settings-mode-head"><div class="settings-mode-icon">TH</div><div><span>VOCABULARY · MODE 01</span><h4>Translation</h4><p>English → Thai</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="translationEnabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="translationTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="translationQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <label class="setting-field"><span>จำนวนตัวเลือก</span><div class="setting-input-unit"><input id="translationChoices" type="number" min="2" max="12"><small>ตัวเลือก</small></div></label>
+        
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="translationWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="translationMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="translation">Reset mode to default</button>
+    </div>
+  </article>
+
+            <article class="settings-mode-card" data-mode-card="meaning">
+    <div class="settings-mode-head"><div class="settings-mode-icon">EN</div><div><span>VOCABULARY · MODE 02</span><h4>Meaning</h4><p>Meaning → English Word</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="meaningEnabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="meaningTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="meaningQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <label class="setting-field"><span>จำนวนตัวเลือก</span><div class="setting-input-unit"><input id="meaningChoices" type="number" min="2" max="12"><small>ตัวเลือก</small></div></label>
+        
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="meaningWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="meaningMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="meaning">Reset mode to default</button>
+    </div>
+  </article>
+
+            <article class="settings-mode-card" data-mode-card="synonym">
+    <div class="settings-mode-head"><div class="settings-mode-icon">SYN</div><div><span>VOCABULARY · MODE 03</span><h4>Synonym</h4><p>Multiple correct answers</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="synonymEnabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="synonymTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="synonymQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <label class="setting-field"><span>จำนวนตัวเลือก</span><div class="setting-input-unit"><input id="synonymChoices" type="number" min="2" max="12"><small>ตัวเลือก</small></div></label>
+        
+                <label class="setting-field">
+                  <span>คำตอบถูกขั้นต่ำ</span>
+                  <input id="synonymMinCorrect" type="number" min="1" max="10">
+                </label>
+
+                <label class="setting-field">
+                  <span>คำตอบถูกสูงสุด</span>
+                  <input id="synonymMaxCorrect" type="number" min="1" max="10">
+                </label>
+
+                <div class="setting-switch-card">
+                  <div>
+                    <strong>แสดงจำนวนคำตอบ</strong>
+                    <small>เช่น Select 3 answers</small>
+                  </div>
+                  <label class="settings-switch"><input id="synonymShowCount" type="checkbox"><span></span></label>
+                </div>
+              
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="synonymWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="synonymMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="synonym">Reset mode to default</button>
+    </div>
+  </article>
+
+            <article class="settings-mode-card" data-mode-card="weak">
+              <div class="settings-mode-head"><div class="settings-mode-icon">RV</div><div><span>VOCABULARY · MODE 04</span><h4>Review</h4><p>Weak Words practice</p></div></div>
+              <div class="settings-card-body">
+                <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="weakEnabled" type="checkbox"><span></span></label></div>
+                <div class="settings-control-grid">
+                  <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="weakTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+                  <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="weakQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+                  <label class="setting-field"><span>จำนวนตัวเลือก</span><div class="setting-input-unit"><input id="weakChoices" type="number" min="2" max="10"><small>ตัวเลือก</small></div></label>
+                  <label class="setting-field"><span>ฝึกซ้ำเมื่อเลือกคำเดียว</span><div class="setting-input-unit"><input id="weakRepeatSingleWord" type="number" min="1" max="20"><small>ครั้ง</small></div></label>
+                </div>
+                <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="weakWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="weakMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+                <button class="mode-reset-button" type="button" data-reset-mode="weak">Reset mode to default</button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section class="settings-tab-panel" data-settings-panel="grammar">
+          <div class="settings-section-head">
+            <div>
+              <span>TOEIC GRAMMAR PRACTICE</span>
+              <h3>Grammar Modes</h3>
+              <p>ทุกโหมดใช้ Question Bank เดียวกัน แต่ตั้ง session behavior แยกได้</p>
+            </div>
+          </div>
+
+          <div class="settings-mode-grid">
+            <article class="settings-mode-card grammar-mode-card" data-mode-card="grammar-part5">
+    <div class="settings-mode-head"><div class="settings-mode-icon">⑤</div><div><span>GRAMMAR · MODE 01</span><h4>TOEIC Part 5</h4><p>Incomplete Sentences</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="grammarPart5Enabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="grammarPart5Time" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="grammarPart5Questions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <div class="setting-switch-card">
+          <div><strong>Shuffle Questions</strong><small>สุ่มลำดับข้อใหม่ทุก Session</small></div>
+          <label class="settings-switch"><input id="grammarPart5Shuffle" type="checkbox"><span></span></label>
+        </div>
+        <div class="setting-switch-card">
+          <div><strong>แสดง Explanation</strong><small>แสดงคำอธิบายหลังตอบ</small></div>
+          <label class="settings-switch"><input id="grammarPart5Explanation" type="checkbox"><span></span></label>
+        </div>
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="grammarPart5WrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="grammarPart5MaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="grammar-part5">Reset mode to default</button>
+    </div>
+  </article>
+            <article class="settings-mode-card grammar-mode-card" data-mode-card="grammar-fill">
+    <div class="settings-mode-head"><div class="settings-mode-icon">✍</div><div><span>GRAMMAR · MODE 02</span><h4>Fill in the Blank</h4><p>Context grammar practice</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="grammarFillEnabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="grammarFillTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="grammarFillQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <div class="setting-switch-card">
+          <div><strong>Shuffle Questions</strong><small>สุ่มลำดับข้อใหม่ทุก Session</small></div>
+          <label class="settings-switch"><input id="grammarFillShuffle" type="checkbox"><span></span></label>
+        </div>
+        <div class="setting-switch-card">
+          <div><strong>แสดง Explanation</strong><small>แสดงคำอธิบายหลังตอบ</small></div>
+          <label class="settings-switch"><input id="grammarFillExplanation" type="checkbox"><span></span></label>
+        </div>
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="grammarFillWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="grammarFillMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="grammar-fill">Reset mode to default</button>
+    </div>
+  </article>
+            <article class="settings-mode-card grammar-mode-card" data-mode-card="grammar-error">
+    <div class="settings-mode-head"><div class="settings-mode-icon">✓</div><div><span>GRAMMAR · MODE 03</span><h4>Error Detection</h4><p>Spot grammar mistakes</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="grammarErrorEnabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="grammarErrorTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="grammarErrorQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <div class="setting-switch-card">
+          <div><strong>Shuffle Questions</strong><small>สุ่มลำดับข้อใหม่ทุก Session</small></div>
+          <label class="settings-switch"><input id="grammarErrorShuffle" type="checkbox"><span></span></label>
+        </div>
+        <div class="setting-switch-card">
+          <div><strong>แสดง Explanation</strong><small>แสดงคำอธิบายหลังตอบ</small></div>
+          <label class="settings-switch"><input id="grammarErrorExplanation" type="checkbox"><span></span></label>
+        </div>
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="grammarErrorWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="grammarErrorMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="grammar-error">Reset mode to default</button>
+    </div>
+  </article>
+            <article class="settings-mode-card grammar-mode-card" data-mode-card="grammar-sentence">
+    <div class="settings-mode-head"><div class="settings-mode-icon">▦</div><div><span>GRAMMAR · MODE 04</span><h4>Sentence Building</h4><p>Word order & structure</p></div></div>
+    <div class="settings-card-body">
+      <div class="setting-switch-card mode-enable"><div><strong>เปิดใช้งานโหมดนี้</strong><small>ปิดแล้ว User จะไม่สามารถเริ่ม Session ใหม่ได้</small></div><label class="settings-switch"><input id="grammarSentenceEnabled" type="checkbox"><span></span></label></div>
+      <div class="settings-control-grid">
+        <label class="setting-field"><span>เวลา / ข้อ</span><div class="setting-input-unit"><input id="grammarSentenceTime" type="number" min="3" max="300"><small>วินาที</small></div></label>
+        <label class="setting-field"><span>จำนวนข้อ / Session</span><div class="setting-input-unit"><input id="grammarSentenceQuestions" type="number" min="1" max="100"><small>ข้อ</small></div></label>
+        <div class="setting-switch-card">
+          <div><strong>Shuffle Questions</strong><small>สุ่มลำดับข้อใหม่ทุก Session</small></div>
+          <label class="settings-switch"><input id="grammarSentenceShuffle" type="checkbox"><span></span></label>
+        </div>
+        <div class="setting-switch-card">
+          <div><strong>แสดง Explanation</strong><small>แสดงคำอธิบายหลังตอบ</small></div>
+          <label class="settings-switch"><input id="grammarSentenceExplanation" type="checkbox"><span></span></label>
+        </div>
+      </div>
+      <div class="settings-rule-row"><div class="setting-switch-card"><div><strong>จำกัดจำนวนตอบผิด</strong><small>จบ session เมื่อผิดถึงจำนวนที่กำหนด</small></div><label class="settings-switch"><input id="grammarSentenceWrongLimit" type="checkbox"><span></span></label></div><label class="setting-field"><span>ตอบผิดได้สูงสุด</span><div class="setting-input-unit"><input id="grammarSentenceMaxWrong" type="number" min="1" max="100"><small>ครั้ง</small></div></label></div>
+      <button class="mode-reset-button" type="button" data-reset-mode="grammar-sentence">Reset mode to default</button>
+    </div>
+  </article>
+          </div>
+        </section>
+
+        <section class="settings-tab-panel" data-settings-panel="global">
+          <div class="settings-section-head">
+            <div>
+              <span>GLOBAL EXPERIENCE</span>
+              <h3>Wrong Answer Feedback</h3>
+              <p>ใช้ร่วมกันกับ Vocabulary games และสามารถนำไปใช้กับ Grammar เพิ่มเติมภายหลังได้</p>
+            </div>
+          </div>
+
+          <article class="settings-global-card">
+            <div class="feedback-preview-v3">
+              <div id="feedbackNoImage" class="feedback-empty-v3">No Image</div>
+              <img id="feedbackPreview" class="feedback-image-v3" alt="Wrong feedback" hidden>
+              <strong>Wrong!</strong>
+              <span>Correct answer</span>
+            </div>
+
+            <div class="feedback-controls-v3">
+              <div class="setting-switch-card">
+                <div>
+                  <strong>เปิด Wrong Feedback</strong>
+                  <small>แสดง feedback เมื่อผู้เล่นตอบผิด</small>
+                </div>
+                <label class="settings-switch"><input id="feedbackEnabled" type="checkbox"><span></span></label>
+              </div>
+
+              <div class="setting-switch-card">
+                <div>
+                  <strong>แสดงรูป</strong>
+                  <small>เปิดใช้ภาพประกอบ Wrong Feedback</small>
+                </div>
+                <label class="settings-switch"><input id="feedbackImageEnabled" type="checkbox"><span></span></label>
+              </div>
+
+              <label class="setting-field setting-field-wide">
+                <span>Feedback Image</span>
+                <input
+                  id="feedbackImage"
+                  class="settings-file-input"
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/gif"
+                >
+                <small>รองรับ PNG / JPG / WEBP / GIF ขนาดไม่เกิน 500 KB</small>
+              </label>
+
+              <button id="removeFeedbackImage" class="settings-remove-button" type="button">
+                Remove Image
+              </button>
+
+              <div class="setting-switch-card">
+                <div>
+                  <strong>เปิดเสียง</strong>
+                  <small>เล่นเสียงเมื่อผู้ใช้ตอบผิด</small>
+                </div>
+                <label class="settings-switch"><input id="feedbackSoundEnabled" type="checkbox"><span></span></label>
+              </div>
+
+              <label class="setting-field setting-field-wide">
+                <span>Sound Path</span>
+                <input id="feedbackSoundUrl" type="text" placeholder="../assets/sound/moo.mp3">
+              </label>
+
+              <label class="setting-field setting-field-wide">
+                <span>Feedback Duration</span>
+                <div class="setting-input-unit">
+                  <input id="feedbackDuration" type="number" min="500" max="5000" step="100">
+                  <small>ms</small>
+                </div>
+              </label>
+            </div>
+          </article>
+        </section>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/admin/sidebar.js?v=20261001-7"></script>
+  <script type="module" src="../js/admin/settings.js?v=20261002-1"></script>
+</body>
+</html>

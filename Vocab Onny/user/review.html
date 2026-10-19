@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Review - OnnyLab
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../css/user/dashboard.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/shared/user-theme.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/user/user-v3.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/user/learning-pages.css?v=20261002-4"
+  >
+  <link rel="stylesheet" href="../css/user/user-polish.css">
+</head>
+
+
+<body>
+  <a href="./dashboard.html"
+     class="onnylab-main-logo"
+     aria-label="Onnylab Home">
+    <img
+      src="../assets/brand/onnylab-wordmark.png"
+      alt="Onnylab"
+    >
+  </a>
+
+
+  <div class="app-layout">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside id="userSidebar" class="sidebar"></aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="main-content">
+
+
+      <!-- MOBILE HEADER -->
+
+      <header class="mobile-header">
+
+        <div class="mobile-brand">
+
+          <img
+            src="../assets/brand/logo.png"
+            alt="Onnylab"
+            class="mobile-brand-logo-image"
+          >
+
+          <div>
+
+            <strong>
+              Vocab Onny
+            </strong>
+
+            <span>
+              Review
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="mobileProfileButton"
+          class="mobile-profile-button"
+          type="button"
+        >
+
+          <span id="mobileAvatarInitial">
+            O
+          </span>
+
+        </button>
+
+      </header>
+
+
+
+      <!-- PAGE HEADER -->
+
+      <section class="page-intro">
+
+        <div>
+
+          <p class="eyebrow">
+            SMART REVIEW
+          </p>
+
+          <h1>
+            Review
+          </h1>
+
+          <p>
+            รวมสิ่งที่ควรกลับมาทบทวน ทั้ง Vocabulary และ Grammar ในที่เดียว
+          </p>
+
+        </div>
+
+
+        <button
+          id="practiceAllBtn"
+          class="page-primary-button review-vocabulary-only"
+          type="button"
+        >
+          Practice Vocabulary Review →
+        </button>
+
+      </section>
+
+      <section class="review-type-selector">
+        <button class="review-type-card active" type="button" data-review-type="vocabulary">
+          <div class="review-type-icon">📚</div>
+          <div>
+            <span>VOCABULARY</span>
+            <h2>Vocabulary Review</h2>
+            <p>ทบทวนคำศัพท์ที่ตอบผิดบ่อยหรือยังไม่แม่น</p>
+          </div>
+          <b id="reviewVocabularyCount">0 words</b>
+        </button>
+
+        <button class="review-type-card" type="button" data-review-type="grammar">
+          <div class="review-type-icon">📘</div>
+          <div>
+            <span>GRAMMAR</span>
+            <h2>Grammar Review</h2>
+            <p>ทบทวนหัวข้อ Grammar ที่ยังทำพลาดบ่อย</p>
+          </div>
+          <b id="reviewGrammarCount">0 topics</b>
+        </button>
+      </section>
+
+      <section id="grammarReviewPanel" class="grammar-review-panel" hidden>
+        <div class="grammar-review-empty-icon">📘</div>
+        <span>GRAMMAR REVIEW</span>
+        <h2>Grammar topics to review</h2>
+        <p>ระบบจะเรียงหัวข้อที่ Accuracy ต่ำก่อน เพื่อให้กลับไปฝึกเฉพาะจุดที่ยังพลาดบ่อย</p>
+        <div class="grammar-mastery-summary" id="grammarMasterySummary">
+          <span>Learning <b id="grammarMasteryLearning">0</b></span>
+          <span>Weak <b id="grammarMasteryWeak">0</b></span>
+          <span>Familiar <b id="grammarMasteryFamiliar">0</b></span>
+          <span>Mastered <b id="grammarMasteryMastered">0</b></span>
+        </div>
+
+        <div id="grammarReviewList" class="grammar-review-list"></div>
+        <a href="./practice.html#grammar-practice">Go to Grammar Practice →</a>
+      </section>
+
+
+      <!-- HERO -->
+
+      <section class="learning-hero review-vocabulary-only">
+
+        <h2>
+          Turn mistakes into progress.
+        </h2>
+
+        <p>
+          ระบบจะคัดคำที่มีอัตราความถูกต้องต่ำ
+          หรือตอบผิด/หมดเวลาบ่อย
+          มาไว้ที่หน้านี้โดยอัตโนมัติ
+        </p>
+
+      </section>
+
+
+
+      <!-- DUE TODAY -->
+
+      <section class="due-review-card review-vocabulary-only">
+        <div>
+          <span class="due-review-kicker">SPACED REVIEW</span>
+          <h2>Due Today <strong id="dueTodayCount">0</strong></h2>
+          <p>
+            ระบบจะนัดคำศัพท์กลับมาทบทวนตามช่วงเวลา
+            เพื่อช่วยให้จำได้นานขึ้น
+          </p>
+        </div>
+
+        <button
+          id="startDueReviewBtn"
+          type="button"
+        >
+          Nothing Due Today ✓
+        </button>
+      </section>
+
+
+      <!-- SUMMARY -->
+
+      <section class="learning-summary review-vocabulary-only">
+
+
+        <article class="learning-stat">
+
+          <span>
+            Vocabulary Review
+          </span>
+
+          <strong id="weakCount">
+            0
+          </strong>
+
+        </article>
+
+
+        <article class="learning-stat">
+
+          <span>
+            Accuracy
+          </span>
+
+          <strong id="weakAccuracy">
+            0%
+          </strong>
+
+        </article>
+
+
+        <article class="learning-stat">
+
+          <span>
+            Total Mistakes
+          </span>
+
+          <strong id="mistakeCount">
+            0
+          </strong>
+
+        </article>
+
+
+        <article class="learning-stat">
+
+          <span>
+            Status
+          </span>
+
+          <strong>
+            Review
+          </strong>
+
+        </article>
+
+
+      </section>
+
+
+
+      <!-- FILTER -->
+
+      <section class="learning-toolbar review-vocabulary-only">
+
+
+        <input
+          id="weakSearch"
+          type="search"
+          placeholder="Search word, Thai, meaning..."
+          autocomplete="off"
+        >
+
+
+        <select id="weakSort">
+
+          <option value="accuracy">
+            Lowest accuracy first
+          </option>
+
+          <option value="mistakes">
+            Most mistakes first
+          </option>
+
+          <option value="attempts">
+            Most attempts first
+          </option>
+
+        </select>
+
+
+      </section>
+
+
+
+      <!-- WORD LIST -->
+
+      <section
+        id="weakWordsList"
+        class="weak-words-grid review-vocabulary-only"
+      >
+      </section>
+
+
+
+      <!-- EMPTY -->
+
+      <section
+        id="weakEmptyState"
+        class="learning-empty review-vocabulary-only"
+        hidden
+      >
+
+        <div class="empty-icon">
+          ✓
+        </div>
+
+        <strong>
+          No weak words right now
+        </strong>
+
+        <p>
+          เล่นเกมเพิ่มอีกหน่อย
+          แล้วระบบจะช่วยคัดคำที่ควรทบทวนให้อัตโนมัติ
+        </p>
+
+      </section>
+
+
+
+      <!-- WEAK PRACTICE MODE PICKER -->
+      <section
+        id="weakModePicker"
+        class="weak-mode-picker"
+        hidden
+        aria-hidden="true"
+      >
+        <div class="weak-mode-picker-backdrop" data-close-weak-picker></div>
+
+        <div
+          class="weak-mode-picker-card"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="weakModePickerTitle"
+        >
+          <button
+            class="weak-mode-picker-close"
+            type="button"
+            aria-label="Close"
+            data-close-weak-picker
+          >
+            ×
+          </button>
+
+          <p class="eyebrow">
+            VOCABULARY REVIEW PRACTICE
+          </p>
+
+          <h2 id="weakModePickerTitle">
+            Choose a practice mode
+          </h2>
+
+          <p class="weak-mode-picker-description">
+            เกมจะใช้เฉพาะคำศัพท์ที่อยู่ใน Vocabulary Review ของคุณเป็นคำถาม
+          </p>
+
+          <div class="weak-mode-options">
+
+            <button
+              class="weak-mode-option"
+              type="button"
+              data-weak-game-mode="translation"
+            >
+              <span class="weak-mode-option-icon">A→ก</span>
+              <strong>Translation</strong>
+              <small>English → Thai</small>
+            </button>
+
+            <button
+              class="weak-mode-option"
+              type="button"
+              data-weak-game-mode="meaning"
+            >
+              <span class="weak-mode-option-icon">ก→A</span>
+              <strong>Meaning</strong>
+              <small>Thai → English</small>
+            </button>
+
+            <button
+              class="weak-mode-option"
+              type="button"
+              data-weak-game-mode="synonym"
+            >
+              <span class="weak-mode-option-icon">≈</span>
+              <strong>Synonym</strong>
+              <small>Similar meanings</small>
+            </button>
+
+          </div>
+        </div>
+      </section>
+
+
+      <footer class="page-footer">
+        Made for Oraya ❤️
+      </footer>
+
+
+    </main>
+
+  </div>
+
+
+  <script src="../js/user/sidebar.js"></script>
+
+  <script
+    type="module"
+    src="../js/user/review.js?v=20261002-4"
+  ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vocabulary - OnnyLab</title>
+  <link rel="stylesheet" href="../css/admin/admin.css">
+  <link rel="stylesheet" href="../css/shared/theme.css">
+  <link rel="stylesheet" href="../css/shared/user-theme.css">
+  <link rel="stylesheet" href="../css/admin/admin-v2.css">
+  <link rel="stylesheet" href="../css/admin/vocabulary-v3.css">
+  <link rel="stylesheet" href="../css/admin/admin-polish.css?v=20261001-7">
+  <link rel="stylesheet" href="../css/admin/admin-sidebar-lock.css?v=20261001-2">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <aside
+      id="adminSidebar"
+      class="admin-sidebar"
+    ></aside>
+
+    <main class="admin-main">
+
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-eyebrow">
+            CONTENT MANAGEMENT
+          </p>
+
+          <h1>
+            Vocabulary
+          </h1>
+        </div>
+
+        <div class="admin-status">
+          <span class="status-dot"></span>
+          Vocabulary Library
+        </div>
+      </header>
+
+      <section class="vocab-v3-page">
+
+        <section class="vocab-v3-hero">
+
+          <div>
+            <span class="vocab-v3-kicker">
+              VOCABULARY LIBRARY
+            </span>
+
+            <h2>
+              Manage your vocabulary content.
+            </h2>
+
+            <p>
+              เพิ่ม แก้ไข ค้นหา และ Import คำศัพท์ที่ใช้ใน
+              Translation, Meaning, Synonym และ Review
+            </p>
+          </div>
+
+          <div class="vocab-hero-actions">
+
+            <button
+              type="button"
+              id="openImportModalBtn"
+              class="secondary-button vocab-hero-button"
+            >
+              ⇧ Import Vocabulary
+            </button>
+
+            <button
+              type="button"
+              id="openAddModalBtn"
+              class="primary-button vocab-hero-button"
+            >
+              + Add Vocabulary
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <section class="vocab-v3-stats">
+
+          <article>
+            <span>TOTAL WORDS</span>
+            <strong id="totalWords">0</strong>
+            <small>all vocabulary records</small>
+          </article>
+
+          <article>
+            <span>ACTIVE</span>
+            <strong id="activeWords">0</strong>
+            <small>available for practice</small>
+          </article>
+
+          <article>
+            <span>INACTIVE</span>
+            <strong id="inactiveWords">0</strong>
+            <small>hidden from practice</small>
+          </article>
+
+          <article>
+            <span>MISSING DATA</span>
+            <strong id="incompleteWords">0</strong>
+            <small>meaning or synonyms missing</small>
+          </article>
+
+        </section>
+
+
+        <section class="vocab-v3-import-card">
+
+          <div class="vocab-import-icon">
+            ⇧
+          </div>
+
+          <div class="vocab-import-copy">
+            <span>BULK IMPORT</span>
+            <h3>Import vocabulary in bulk</h3>
+            <p>
+              รองรับ JSON, CSV, TSV/TXT, Excel XLSX/XLS และ ODS
+              พร้อม Preview และตรวจ Duplicate ก่อนบันทึก
+            </p>
+          </div>
+
+          <div class="vocab-import-formats">
+            <span>JSON</span>
+            <span>CSV</span>
+            <span>TSV</span>
+            <span>XLSX</span>
+            <span>ODS</span>
+          </div>
+
+          <button
+            id="openImportModalBtnSecondary"
+            type="button"
+          >
+            Open Import Center →
+          </button>
+
+        </section>
+
+
+        <section class="vocab-v3-library">
+
+          <div class="vocab-library-head">
+
+            <div>
+              <span>VOCABULARY BANK</span>
+              <h3>
+                All Vocabulary
+              </h3>
+            </div>
+
+            <small id="vocabResultCount">
+              0 results
+            </small>
+
+          </div>
+
+
+          <div class="vocab-toolbar">
+
+            <label class="vocab-search-field">
+              <span>⌕</span>
+
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Search English, Thai, meaning, synonym..."
+                autocomplete="off"
+              >
+            </label>
+
+
+            <select id="levelFilter">
+              <option value="">All Levels</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+            </select>
+
+
+            <select id="statusFilter">
+              <option value="">All Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+
+          </div>
+
+
+          <div class="vocab-table-card">
+
+            <div class="vocab-table-wrapper">
+
+              <table class="vocab-table">
+
+                <thead>
+                  <tr>
+                    <th>Word</th>
+                    <th>Thai</th>
+                    <th>Meaning</th>
+                    <th>Synonyms</th>
+                    <th>Level</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody id="vocabTableBody">
+                  <tr>
+                    <td
+                      colspan="7"
+                      class="empty-table"
+                    >
+                      Loading vocabulary...
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ADD / EDIT VOCABULARY -->
+  <div
+    id="vocabModal"
+    class="modal"
+  >
+
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-card vocab-editor-modal">
+
+      <div class="modal-header">
+
+        <div>
+          <p class="eyebrow">
+            VOCABULARY
+          </p>
+
+          <h2 id="modalTitle">
+            Add Vocabulary
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          id="closeModalBtn"
+          class="modal-close"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form id="vocabForm">
+
+        <input
+          type="hidden"
+          id="editDocumentId"
+        >
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="wordInput">
+              English Word *
+            </label>
+
+            <input
+              type="text"
+              id="wordInput"
+              placeholder="example: consider"
+              autocomplete="off"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="thaiInput">
+              Thai Translation *
+            </label>
+
+            <input
+              type="text"
+              id="thaiInput"
+              placeholder="ตัวอย่าง: พิจารณา"
+              autocomplete="off"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="meaningInput">
+            Meaning
+          </label>
+
+          <textarea
+            id="meaningInput"
+            rows="3"
+            placeholder="example: to think carefully about something"
+          ></textarea>
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleSentenceInput">
+            Example Sentence
+          </label>
+
+          <textarea
+            id="exampleSentenceInput"
+            rows="3"
+            placeholder="example: We should consider buying one."
+          ></textarea>
+        </div>
+
+
+        <div class="form-group">
+          <label for="synonymsInput">
+            Synonyms
+          </label>
+
+          <input
+            type="text"
+            id="synonymsInput"
+            placeholder="estimate, analyze, appraise, judge"
+            autocomplete="off"
+          >
+
+          <small>
+            Separate each synonym with a comma.
+          </small>
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="levelInput">
+              Level
+            </label>
+
+            <select id="levelInput">
+              <option value="">None</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label>
+              Status
+            </label>
+
+            <label class="switch-row">
+              <input
+                type="checkbox"
+                id="activeInput"
+                checked
+              >
+
+              <span>
+                Active
+              </span>
+            </label>
+          </div>
+
+        </div>
+
+
+        <div
+          id="formMessage"
+          class="form-message"
+        ></div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            id="cancelBtn"
+            class="secondary-button"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            id="saveBtn"
+            class="primary-button"
+          >
+            <span id="saveBtnText">
+              Save Vocabulary
+            </span>
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- IMPORT VOCABULARY -->
+  <div
+    id="vocabImportModal"
+    class="modal"
+  >
+
+    <div
+      class="modal-backdrop"
+      data-close-import
+    ></div>
+
+    <div class="modal-card vocab-import-modal">
+
+      <div class="modal-header">
+
+        <div>
+          <p class="eyebrow">
+            BULK IMPORT
+          </p>
+
+          <h2>
+            Import Vocabulary
+          </h2>
+
+          <p class="import-modal-subtitle">
+            JSON · CSV · TSV/TXT · XLSX/XLS · ODS
+          </p>
+        </div>
+
+        <button
+          type="button"
+          id="closeImportModalBtn"
+          class="modal-close"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <section class="import-template-bar">
+
+        <div>
+          <strong>
+            Need a template?
+          </strong>
+
+          <small>
+            ใช้ header มาตรฐานของ OnnyLab เพื่อ Import ได้แม่นที่สุด
+          </small>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            id="downloadCsvTemplateBtn"
+          >
+            CSV Template
+          </button>
+
+          <button
+            type="button"
+            id="downloadJsonTemplateBtn"
+          >
+            JSON Template
+          </button>
+
+          <button
+            type="button"
+            id="downloadExcelTemplateBtn"
+          >
+            Excel Template
+          </button>
+        </div>
+
+      </section>
+
+
+      <label
+        id="vocabImportDropzone"
+        class="import-dropzone"
+        for="vocabImportFile"
+      >
+
+        <input
+          id="vocabImportFile"
+          type="file"
+          accept=".json,.csv,.tsv,.txt,.xlsx,.xls,.ods,application/json,text/csv,text/tab-separated-values,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/vnd.oasis.opendocument.spreadsheet"
+          hidden
+        >
+
+        <span class="import-drop-icon">
+          ⇧
+        </span>
+
+        <strong>
+          Drop file here or click to browse
+        </strong>
+
+        <small>
+          JSON, CSV, TSV/TXT, XLSX, XLS, ODS
+        </small>
+
+      </label>
+
+
+      <div
+        id="importFileSummary"
+        class="import-file-summary"
+        hidden
+      ></div>
+
+
+      <section
+        id="importValidationSummary"
+        class="import-validation-summary"
+        hidden
+      >
+
+        <div>
+          <span>ROWS</span>
+          <strong id="importRowsCount">0</strong>
+        </div>
+
+        <div>
+          <span>VALID</span>
+          <strong id="importValidCount">0</strong>
+        </div>
+
+        <div>
+          <span>DUPLICATES</span>
+          <strong id="importDuplicateCount">0</strong>
+        </div>
+
+        <div>
+          <span>INVALID</span>
+          <strong id="importInvalidCount">0</strong>
+        </div>
+
+      </section>
+
+
+      <section
+        id="importOptionsPanel"
+        class="import-options-panel"
+        hidden
+      >
+
+        <div>
+          <label for="importDuplicateStrategy">
+            Existing word
+          </label>
+
+          <select id="importDuplicateStrategy">
+            <option value="skip">
+              Skip existing
+            </option>
+
+            <option value="update">
+              Update existing
+            </option>
+          </select>
+        </div>
+
+        <div class="import-status-note">
+          <strong>Status rule</strong>
+          <span>ใช้ค่า active/status จากไฟล์ ถ้าเว้นว่างจะ Import เป็น Active</span>
+        </div>
+
+      </section>
+
+
+      <section
+        id="importPreviewPanel"
+        class="import-preview-panel"
+        hidden
+      >
+
+        <div class="import-preview-head">
+          <div>
+            <span>PREVIEW</span>
+            <h3>
+              Parsed vocabulary
+            </h3>
+          </div>
+
+          <small id="importPreviewMeta">
+            0 rows
+          </small>
+        </div>
+
+        <div class="import-preview-table-wrap">
+
+          <table class="import-preview-table">
+
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Word</th>
+                <th>Thai</th>
+                <th>Meaning</th>
+                <th>Level</th>
+              </tr>
+            </thead>
+
+            <tbody id="importPreviewBody"></tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+
+      <div
+        id="importMessage"
+        class="import-message"
+      ></div>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          id="cancelImportBtn"
+          class="secondary-button"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          id="confirmImportBtn"
+          class="primary-button"
+          disabled
+        >
+          Import Vocabulary
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="../js/admin/sidebar.js?v=20261001-7"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"
+  ></script>
+
+  <script
+    type="module"
+    src="../js/admin/vocabulary.js"
+  ></script>
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Profile - Vocab Onny</title>
+
+  <link
+  rel="stylesheet"
+  href="../css/user/profile.css?v=20261002-4"
+  >
+
+  <link
+  rel="stylesheet"
+  href="../css/shared/user-theme.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/user/user-v3.css"
+  >
+  <link rel="stylesheet" href="../css/user/user-polish.css">
+</head>
+
+
+<body>
+  <a href="./dashboard.html"
+     class="onnylab-main-logo"
+     aria-label="Onnylab Home">
+    <img
+      src="../assets/brand/onnylab-wordmark.png"
+      alt="Onnylab"
+    >
+  </a>
+
+
+  <div class="app-layout">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside id="userSidebar" class="sidebar"></aside>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+
+      <!-- MOBILE HEADER -->
+
+      <header class="mobile-header">
+
+        <button
+          id="mobileBackBtn"
+          class="mobile-back-button"
+          type="button"
+        >
+          ←
+        </button>
+
+
+        <div class="mobile-title">
+
+          <strong>
+            Profile
+          </strong>
+
+          <span>
+            Vocab Onny
+          </span>
+
+        </div>
+
+
+        <div class="mobile-avatar">
+
+          <span
+            id="mobileAvatarInitial"
+          >
+            O
+          </span>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- =====================================
+           PAGE HEADER
+      ====================================== -->
+
+      <section class="page-header">
+
+        <div>
+
+          <p class="eyebrow">
+            ACCOUNT
+          </p>
+
+          <h1>
+            Your Profile
+          </h1>
+
+          <p class="page-description">
+            จัดการข้อมูลบัญชีและชื่อที่ใช้แสดงภายใน Vocab Onny
+          </p>
+
+        </div>
+
+
+        <button
+          id="backToGamesBtn"
+          class="secondary-button"
+          type="button"
+        >
+
+          ← Back to Practice
+
+        </button>
+
+      </section>
+
+
+
+      <!-- =====================================
+           PROFILE HERO
+      ====================================== -->
+
+      <section class="profile-hero">
+
+        <div class="hero-profile">
+
+
+          <!-- AVATAR -->
+
+          <div class="profile-avatar-wrapper">
+
+            <div class="profile-avatar">
+
+              <span
+                id="profileAvatarInitial"
+              >
+                O
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- INFO -->
+
+          <div class="hero-user-info">
+
+            <span class="hero-label">
+              VOCAB ONNY PLAYER
+            </span>
+
+            <h2
+              id="heroDisplayName"
+            >
+              Oraya
+            </h2>
+
+            <p
+              id="heroEmail"
+            >
+              -
+            </p>
+
+
+            <div class="account-status">
+
+              <span class="status-dot"></span>
+
+              Account Connected
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           PROFILE CONTENT
+      ====================================== -->
+
+      <div class="profile-grid single-column">
+
+
+        <!-- PERSONAL INFORMATION -->
+
+        <section class="panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <p class="panel-label">
+                PERSONAL INFORMATION
+              </p>
+
+              <h3>
+                Account details
+              </h3>
+
+            </div>
+
+          </div>
+
+
+
+          <form
+            id="profileForm"
+            class="profile-form"
+          >
+
+
+            <!-- DISPLAY NAME -->
+
+            <div class="form-group">
+
+              <label for="displayName">
+                Display name
+              </label>
+
+              <input
+                id="displayName"
+                type="text"
+                maxlength="40"
+                placeholder="Enter your name"
+                autocomplete="name"
+              >
+
+              <small>
+                ชื่อนี้จะแสดงในหน้า Games และ Dashboard
+              </small>
+
+            </div>
+
+
+
+            <!-- DAILY GOAL -->
+
+            <div class="form-group">
+
+              <label for="dailyGoal">
+                Daily practice goal
+              </label>
+
+              <select id="dailyGoal">
+                <option value="10">10 questions / day</option>
+                <option value="20">20 questions / day</option>
+                <option value="30">30 questions / day</option>
+                <option value="50">50 questions / day</option>
+              </select>
+
+              <small>
+                ใช้เป็นเป้าหมายประจำวันบน Dashboard
+              </small>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                disabled
+              >
+
+              <small>
+                Email นี้ใช้สำหรับเข้าสู่ระบบ
+              </small>
+
+            </div>
+
+
+
+            <!-- UID -->
+
+            <div class="form-group">
+
+              <label for="uid">
+                User ID
+              </label>
+
+
+              <div class="uid-row">
+
+                <input
+                  id="uid"
+                  type="text"
+                  disabled
+                >
+
+                <button
+                  id="copyUidBtn"
+                  class="copy-button"
+                  type="button"
+                >
+                  Copy
+                </button>
+
+              </div>
+
+
+              <small>
+                รหัสประจำบัญชีจาก Firebase Authentication
+              </small>
+
+            </div>
+
+
+
+            <!-- MESSAGE -->
+
+            <div
+              id="profileMessage"
+              class="message"
+              aria-live="polite"
+            ></div>
+
+
+
+            <!-- SAVE -->
+
+            <button
+              id="saveProfileBtn"
+              class="save-button"
+              type="submit"
+            >
+
+              <span
+                id="saveProfileText"
+              >
+                Save changes
+              </span>
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- AVATAR INFORMATION -->
+
+        <section class="account-panel avatar-info-panel">
+
+          <div>
+
+            <p class="panel-label">
+              PROFILE AVATAR
+            </p>
+
+            <h3>
+              Automatic Avatar
+            </h3>
+
+            <p>
+              ตอนนี้ Vocab Onny ใช้อักษรตัวแรกของชื่อเป็นรูปโปรไฟล์
+              โดยไม่ใช้ Firebase Storage จึงไม่มีค่าใช้จ่ายสำหรับการเก็บไฟล์รูปภาพ
+            </p>
+
+          </div>
+
+
+          <div
+            id="avatarPreview"
+            class="avatar-preview"
+          >
+
+            <span
+              id="avatarPreviewInitial"
+            >
+              O
+            </span>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+
+      <!-- =====================================
+           FIREBASE ACCOUNT
+      ====================================== -->
+
+      <section class="account-panel">
+
+        <div>
+
+          <p class="panel-label">
+            ACCOUNT
+          </p>
+
+          <h3>
+            Firebase Authentication
+          </h3>
+
+          <p>
+            บัญชีนี้เชื่อมต่อกับ Firebase Authentication
+            ชื่อที่แก้ไขจะถูกบันทึกกับบัญชีและสามารถเรียกใช้
+            เมื่อเข้าสู่ระบบจากอุปกรณ์อื่นได้
+          </p>
+
+        </div>
+
+
+        <div class="account-badge">
+
+          <span class="status-dot"></span>
+
+          Connected
+
+        </div>
+
+      </section>
+
+
+
+      <!-- FOOTER -->
+
+      <footer class="page-footer">
+        Made for Oraya ❤️
+      </footer>
+
+    </main>
+
+  </div>
+
+
+
+  <script src="../js/user/sidebar.js"></script>
+
+  <script
+    type="module"
+    src="../js/user/profile.js?v=20261002-4"
+  ></script>
+
+</body>
+
+</html>

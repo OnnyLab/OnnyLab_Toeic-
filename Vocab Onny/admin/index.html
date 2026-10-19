@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard - OnnyLab</title>
+  <link rel="stylesheet" href="../css/admin/admin.css">
+  <link rel="stylesheet" href="../css/shared/theme.css">
+  <link rel="stylesheet" href="../css/shared/user-theme.css">
+  <link rel="stylesheet" href="../css/admin/admin-v2.css">
+  <link rel="stylesheet" href="../css/admin/dashboard-v3.css">
+  <link rel="stylesheet" href="../css/admin/admin-polish.css?v=20261001-7">
+  <link rel="stylesheet" href="../css/admin/admin-sidebar-lock.css?v=20261001-2">
+</head>
+
+<body>
+  <div class="admin-layout">
+
+    <aside
+      id="adminSidebar"
+      class="admin-sidebar"
+    ></aside>
+
+    <main class="admin-main">
+
+      <header class="admin-topbar">
+        <div>
+          <p class="admin-eyebrow">
+            LEARNING OPERATIONS
+          </p>
+
+          <h1>
+            Dashboard
+          </h1>
+        </div>
+
+        <div class="admin-status">
+          <span class="status-dot"></span>
+          <span id="dashboardSystemStatus">
+            Firebase Connected
+          </span>
+        </div>
+      </header>
+
+      <section class="admin-dashboard-v3">
+
+        <section class="admin-dashboard-hero">
+          <div>
+            <span class="admin-dashboard-kicker">
+              ONNYLAB CONTROL CENTER
+            </span>
+
+            <h2 id="dashboardGreeting">
+              Welcome back, Administrator.
+            </h2>
+
+            <p>
+              ดูสถานะผู้เรียนแบบสด วิเคราะห์คะแนน
+              และติดตามสิ่งที่ควรปรับปรุงจากหน้าเดียว
+            </p>
+          </div>
+
+          <div class="admin-dashboard-hero-actions">
+            <a href="./vocabulary.html">
+              + Vocabulary
+            </a>
+
+            <a href="./grammar.html">
+              + Grammar
+            </a>
+
+            <a href="./data.html">
+              Import Data
+            </a>
+          </div>
+        </section>
+
+        <section class="admin-kpi-grid">
+          <article class="admin-kpi-card online">
+            <span class="admin-kpi-label">
+              ONLINE NOW
+            </span>
+            <strong id="kpiOnlineNow">0</strong>
+            <small id="kpiOnlineNowMeta">
+              users active now
+            </small>
+          </article>
+
+          <article class="admin-kpi-card">
+            <span class="admin-kpi-label">
+              ACTIVE TODAY
+            </span>
+            <strong id="kpiActiveToday">0</strong>
+            <small>
+              learners today
+            </small>
+          </article>
+
+          <article class="admin-kpi-card">
+            <span class="admin-kpi-label">
+              PRACTICE TODAY
+            </span>
+            <strong id="kpiSessionsToday">0</strong>
+            <small>
+              completed sessions
+            </small>
+          </article>
+
+          <article class="admin-kpi-card">
+            <span class="admin-kpi-label">
+              QUESTIONS TODAY
+            </span>
+            <strong id="kpiQuestionsToday">0</strong>
+            <small>
+              answered questions
+            </small>
+          </article>
+
+          <article class="admin-kpi-card">
+            <span class="admin-kpi-label">
+              AVG ACCURACY
+            </span>
+            <strong id="kpiAccuracy">0%</strong>
+            <small>
+              all practice
+            </small>
+          </article>
+
+          <article class="admin-kpi-card alert">
+            <span class="admin-kpi-label">
+              NEEDS REVIEW
+            </span>
+            <strong id="kpiNeedsReview">0</strong>
+            <small>
+              learners below target
+            </small>
+          </article>
+        </section>
+
+        <section class="admin-dashboard-grid admin-dashboard-grid-main">
+
+          <article class="admin-dashboard-panel live-users-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>LIVE USERS</span>
+                <h3>Who's learning now</h3>
+              </div>
+
+              <b id="liveUsersBadge">
+                0 ONLINE
+              </b>
+            </div>
+
+            <div
+              id="liveUsersList"
+              class="live-users-list"
+            ></div>
+          </article>
+
+          <article class="admin-dashboard-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>ACTIVITY</span>
+                <h3>Last 7 days</h3>
+              </div>
+
+              <small>
+                Vocabulary vs Grammar
+              </small>
+            </div>
+
+            <div
+              id="learningActivityChart"
+              class="learning-activity-chart"
+            ></div>
+          </article>
+        </section>
+
+        <section class="admin-dashboard-grid admin-dashboard-grid-secondary">
+
+          <article class="admin-dashboard-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>LEARNER OVERVIEW</span>
+                <h3>User performance</h3>
+              </div>
+
+              <a href="./users.html">
+                View users →
+              </a>
+            </div>
+
+            <div
+              id="userPerformanceList"
+              class="user-performance-list"
+            ></div>
+          </article>
+
+          <article class="admin-dashboard-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>NEEDS ATTENTION</span>
+                <h3>Difficult grammar</h3>
+              </div>
+
+              <a href="./grammar.html">
+                Manage →
+              </a>
+            </div>
+
+            <div
+              id="difficultGrammarList"
+              class="difficulty-list"
+            ></div>
+          </article>
+
+          <article class="admin-dashboard-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>VOCABULARY</span>
+                <h3>Weakest words</h3>
+              </div>
+
+              <a href="./vocabulary.html">
+                Manage →
+              </a>
+            </div>
+
+            <div
+              id="weakVocabularyList"
+              class="difficulty-list"
+            ></div>
+          </article>
+        </section>
+
+        <section class="admin-dashboard-grid admin-dashboard-grid-bottom">
+
+          <article class="admin-dashboard-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>RECENT ACTIVITY</span>
+                <h3>Latest practice</h3>
+              </div>
+
+              <small id="recentActivityMeta">
+                Latest sessions
+              </small>
+            </div>
+
+            <div
+              id="recentActivityList"
+              class="recent-activity-list"
+            ></div>
+          </article>
+
+          <article class="admin-dashboard-panel">
+            <div class="admin-panel-head">
+              <div>
+                <span>CONTENT HEALTH</span>
+                <h3>Learning content</h3>
+              </div>
+            </div>
+
+            <div class="content-health-grid">
+              <div>
+                <span>Vocabulary</span>
+                <strong id="contentVocabularyCount">
+                  0
+                </strong>
+                <small id="contentVocabularyMeta">
+                  words
+                </small>
+              </div>
+
+              <div>
+                <span>Grammar</span>
+                <strong id="contentGrammarCount">
+                  0
+                </strong>
+                <small id="contentGrammarMeta">
+                  questions
+                </small>
+              </div>
+
+              <div>
+                <span>Grammar Chapters</span>
+                <strong id="contentGrammarChapters">
+                  0 / 16
+                </strong>
+                <small>
+                  chapters covered
+                </small>
+              </div>
+
+              <div>
+                <span>Total Users</span>
+                <strong id="contentUsersCount">
+                  0
+                </strong>
+                <small>
+                  learner accounts
+                </small>
+              </div>
+            </div>
+          </article>
+        </section>
+
+      </section>
+
+    </main>
+  </div>
+
+  <div
+    id="learnerDrawerBackdrop"
+    class="learner-drawer-backdrop"
+    hidden
+  ></div>
+
+  <aside
+    id="learnerDrawer"
+    class="learner-drawer"
+    aria-hidden="true"
+  >
+    <button
+      id="learnerDrawerClose"
+      class="learner-drawer-close"
+      type="button"
+      aria-label="Close learner details"
+    >
+      ×
+    </button>
+
+    <div id="learnerDrawerContent"></div>
+  </aside>
+
+  <script src="../js/admin/sidebar.js?v=20261001-7"></script>
+  <script
+    type="module"
+    src="../js/admin/admin.js"
+  ></script>
+</body>
+</html>

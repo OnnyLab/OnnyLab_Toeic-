@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Game Result - Vocab Onny</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/user/result.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/shared/user-theme.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/user/user-v3.css"
+  >
+
+  <link rel="stylesheet" href="../css/user/user-polish.css">
+</head>
+
+
+<body>
+
+  <main class="result-page">
+
+
+    <!-- =====================================================
+         HEADER / BRAND
+    ====================================================== -->
+
+    <header class="result-header">
+
+      <a
+        href="./dashboard.html"
+        class="result-brand result-brand-image"
+        aria-label="Onnylab Home"
+      >
+        <img
+          src="../assets/brand/logo.png"
+          alt="Onnylab"
+          class="result-brand-logo-image"
+        >
+      </a>
+
+
+      <button
+        id="backGamesTopBtn"
+        class="top-back-button"
+        type="button"
+      >
+        ← Games
+      </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         LOADING
+    ====================================================== -->
+
+    <section
+      id="resultLoading"
+      class="result-state"
+    >
+
+      <div class="result-loader"></div>
+
+      <p>
+        Loading result...
+      </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ERROR
+    ====================================================== -->
+
+    <section
+      id="resultError"
+      class="result-state"
+      hidden
+    >
+
+      <div class="error-icon">
+        !
+      </div>
+
+      <h1>
+        Result not found
+      </h1>
+
+      <p>
+        ไม่พบผลการเล่นล่าสุด
+      </p>
+
+      <button
+        id="errorBackBtn"
+        class="primary-button"
+        type="button"
+      >
+        Back to Practice
+      </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESULT CONTENT
+    ====================================================== -->
+
+    <section
+      id="resultContent"
+      class="result-card"
+      hidden
+    >
+
+
+      <!-- ===================================================
+           PERFORMANCE EMOJI
+
+           JS จะเปลี่ยนอัตโนมัติ:
+           🐃 0-19
+           😢 20-39
+           😐 40-59
+           😊 60-79
+           🤩 80-100
+      ==================================================== -->
+
+      <div
+        id="resultIcon"
+        class="result-icon"
+        aria-hidden="true"
+      >
+        🎉
+      </div>
+
+
+
+      <!-- GAME COMPLETE -->
+
+      <p class="result-eyebrow">
+        GAME COMPLETE
+      </p>
+
+
+
+      <!-- PLAYER -->
+
+      <h1 class="result-title">
+
+        <span id="resultHeadline">
+          Great job
+        </span>,
+
+        <span id="playerName">
+          Player
+        </span>
+
+        !
+
+      </h1>
+
+
+
+      <!-- DYNAMIC MESSAGE -->
+
+      <p
+        id="resultMessage"
+        class="result-message"
+      >
+        ทุกการฝึกคือความก้าวหน้า ลองอีกครั้งได้เลย
+      </p>
+
+
+
+      <!-- ===================================================
+           GAME MODE
+      ==================================================== -->
+
+      <div
+        id="modeBadge"
+        class="mode-badge"
+      >
+        Translation
+      </div>
+
+
+
+      <!-- ===================================================
+           PERFORMANCE LEVEL
+
+           ตัวอย่าง:
+           ดี
+           60 - 79%
+      ==================================================== -->
+
+      <div class="performance-result">
+
+        <div
+          id="performanceLevel"
+          class="performance-level"
+        >
+          ปานกลาง
+        </div>
+
+        <div
+          id="performanceRange"
+          class="performance-range"
+        >
+          40 - 59%
+        </div>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           ACCURACY
+      ==================================================== -->
+
+      <div class="accuracy-wrap">
+
+        <div class="accuracy-ring">
+
+          <div class="accuracy-ring-inner">
+
+            <strong
+              id="accuracyValue"
+            >
+              0%
+            </strong>
+
+            <span>
+              Accuracy
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           MAIN STATS
+      ==================================================== -->
+
+      <div class="result-stats">
+
+
+        <!-- CORRECT -->
+
+        <article class="stat-card correct">
+
+          <span class="stat-icon">
+            ✓
+          </span>
+
+          <div>
+
+            <small>
+              Correct
+            </small>
+
+            <strong
+              id="correctValue"
+            >
+              0
+            </strong>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- WRONG -->
+
+        <article class="stat-card wrong">
+
+          <span class="stat-icon">
+            ×
+          </span>
+
+          <div>
+
+            <small>
+              Wrong
+            </small>
+
+            <strong
+              id="wrongValue"
+            >
+              0
+            </strong>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- TIMEOUT -->
+
+        <article class="stat-card timeout">
+
+          <span class="stat-icon">
+            ◷
+          </span>
+
+          <div>
+
+            <small>
+              Timeout
+            </small>
+
+            <strong
+              id="timeoutValue"
+            >
+              0
+            </strong>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- SCORE -->
+
+        <article class="stat-card score">
+
+          <span class="stat-icon">
+            ★
+          </span>
+
+          <div>
+
+            <small>
+              Score
+            </small>
+
+            <strong
+              id="scoreValue"
+            >
+              0
+            </strong>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           DETAILS
+      ==================================================== -->
+
+      <div class="result-details">
+
+
+        <!-- QUESTIONS -->
+
+        <div>
+
+          <span>
+            Questions
+          </span>
+
+          <strong
+            id="questionsValue"
+          >
+            0
+          </strong>
+
+        </div>
+
+
+
+        <!-- AVERAGE RESPONSE -->
+
+        <div>
+
+          <span>
+            Average Response
+          </span>
+
+          <strong
+            id="averageResponseValue"
+          >
+            0.0s
+          </strong>
+
+        </div>
+
+
+
+        <!-- DURATION -->
+
+        <div>
+
+          <span>
+            Duration
+          </span>
+
+          <strong
+            id="durationValue"
+          >
+            0:00
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           WRONG LIMIT NOTICE
+      ==================================================== -->
+
+      <div
+        id="wrongLimitNotice"
+        class="wrong-limit-notice"
+        hidden
+      >
+
+        เกมจบก่อนครบจำนวนข้อ
+        เพราะถึงจำนวนคำตอบผิดสูงสุด
+
+      </div>
+
+
+
+      <!-- ===================================================
+           ACTION BUTTONS
+      ==================================================== -->
+
+      <div class="result-actions">
+
+
+        <!-- PLAY AGAIN -->
+
+        <button
+          id="playAgainBtn"
+          class="primary-button"
+          type="button"
+        >
+
+          Play Again
+
+          <span>
+            ↻
+          </span>
+
+        </button>
+
+
+        <!-- PRACTICE MISTAKES -->
+
+        <button
+          id="practiceMistakesBtn"
+          class="secondary-button practice-mistakes-button"
+          type="button"
+          hidden
+        >
+          Practice Mistakes
+          <span id="practiceMistakesCount"></span>
+        </button>
+
+
+
+        <!-- DASHBOARD -->
+
+        <button
+          id="dashboardBtn"
+          class="secondary-button"
+          type="button"
+        >
+          Dashboard
+        </button>
+
+
+
+        <!-- HISTORY -->
+
+        <button
+          id="historyBtn"
+          class="secondary-button"
+          type="button"
+        >
+          History
+        </button>
+
+      </div>
+
+
+
+      <!-- BACK TO GAME MODES -->
+
+      <button
+        id="backGamesBtn"
+        class="text-button"
+        type="button"
+      >
+        ← Back to Game Modes
+      </button>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+      Made for Oraya ❤️
+    </footer>
+
+
+  </main>
+
+
+
+  <!-- =======================================================
+       RESULT LOGIC
+  ======================================================== -->
+
+  <script
+    type="module"
+    src="../js/user/result.js?v=20261002-3"
+  ></script>
+
+
+</body>
+
+</html>

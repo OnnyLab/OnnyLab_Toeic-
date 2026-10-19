@@ -1,0 +1,380 @@
+
+/* =========================================================
+   USER MANAGEMENT V3
+   Final override loaded after admin-v2.css
+========================================================= */
+
+.users-page{
+  width:min(1420px,calc(100% - 48px))!important;
+  margin:0 auto!important;
+  padding:24px 0 56px!important;
+  display:grid;
+  gap:18px;
+}
+
+/* HERO */
+.users-v3-hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(255,255,255,.16),transparent 28%),
+    radial-gradient(circle at 8% 100%,rgba(56,189,248,.12),transparent 30%),
+    linear-gradient(135deg,#0B2B57 0%,#174D8B 54%,#3B82F6 100%);
+  color:#fff;
+  box-shadow:0 20px 46px rgba(11,43,87,.15);
+  overflow:hidden;
+}
+
+.users-v3-hero-copy{
+  min-width:0;
+}
+
+.users-v3-kicker{
+  display:block;
+  margin-bottom:8px;
+  color:#93C5FD;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.16em;
+}
+
+.users-v3-hero h2{
+  margin:0!important;
+  color:#fff!important;
+  font-size:clamp(28px,3vw,40px)!important;
+  line-height:1.05!important;
+  letter-spacing:-.04em!important;
+}
+
+.users-v3-hero p{
+  margin:9px 0 0!important;
+  max-width:680px;
+  color:rgba(255,255,255,.74)!important;
+  font-size:13px!important;
+  line-height:1.6!important;
+}
+
+.users-v3-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:8px;
+  flex:0 0 auto;
+}
+
+.users-v3-hero-button{
+  min-height:46px;
+  padding:0 18px;
+  border:1px solid rgba(214,224,238,.95);
+  border-radius:13px;
+  background:#fff;
+  color:#3D628D;
+  box-shadow:none;
+  font-size:12px;
+  font-weight:850;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.users-v3-hero-button:hover{
+  background:#F7FAFE;
+  color:#2F557F;
+  border-color:#C8D7E8;
+  transform:translateY(-1px);
+}
+
+/* Message */
+.users-page .user-message{
+  margin:0!important;
+}
+
+/* SUMMARY */
+.users-page .user-summary-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+  margin:0!important;
+}
+
+.users-page .user-summary-card{
+  position:relative;
+  min-width:0;
+  min-height:112px!important;
+  padding:18px!important;
+  border:1px solid #E3E8F0!important;
+  border-radius:17px!important;
+  background:#fff!important;
+  box-shadow:0 8px 24px rgba(16,35,63,.055)!important;
+  overflow:hidden;
+}
+
+.users-page .user-summary-card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:54px;
+  height:54px;
+  border-radius:0 0 0 54px;
+  background:#F2F6FB;
+}
+
+.users-page .user-summary-card span{
+  position:relative;
+  z-index:1;
+  color:#8492A6!important;
+  font-size:8px!important;
+  font-weight:950!important;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.users-page .user-summary-card strong{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin-top:8px!important;
+  color:#1E3C64!important;
+  font-size:30px!important;
+  line-height:1!important;
+  letter-spacing:-.04em;
+}
+
+.users-page .user-summary-card small{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin-top:6px!important;
+  color:#9AA5B4!important;
+  font-size:9px!important;
+}
+
+/* TOOLBAR */
+.users-page .users-toolbar{
+  display:grid!important;
+  grid-template-columns:minmax(280px,1fr) 170px 150px!important;
+  gap:10px!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+.users-page .users-toolbar input,
+.users-page .users-toolbar select{
+  min-height:44px!important;
+  height:44px!important;
+  box-sizing:border-box;
+  margin:0!important;
+  padding:0 12px!important;
+  border:1px solid #E1E7EF!important;
+  border-radius:11px!important;
+  background:#fff!important;
+  color:#244669!important;
+  font-size:11px!important;
+  box-shadow:none!important;
+}
+
+.users-page .users-toolbar input:focus,
+.users-page .users-toolbar select:focus{
+  border-color:#7DB7FF!important;
+  box-shadow:0 0 0 4px rgba(59,130,246,.10)!important;
+}
+
+/* TABLE */
+.users-page .users-table-card{
+  overflow:hidden!important;
+  margin:0!important;
+  border:1px solid #E3E8F0!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  box-shadow:0 8px 28px rgba(16,35,63,.055)!important;
+}
+
+.users-page .users-table-wrapper{
+  width:100%;
+  overflow-x:auto;
+}
+
+.users-page .users-table{
+  width:100%;
+  min-width:940px;
+  border-collapse:separate!important;
+  border-spacing:0!important;
+}
+
+.users-page .users-table thead th{
+  padding:12px 14px!important;
+  border:0!important;
+  border-bottom:1px solid #E6ECF3!important;
+  background:#F8FAFD!important;
+  color:#7B8BA2!important;
+  font-size:9px!important;
+  font-weight:900!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.users-page .users-table tbody td{
+  padding:13px 14px!important;
+  border:0!important;
+  border-bottom:1px solid #EEF2F6!important;
+  color:#445D78!important;
+  font-size:11px!important;
+  vertical-align:middle!important;
+}
+
+.users-page .users-table tbody tr:last-child td{
+  border-bottom:0!important;
+}
+
+.users-page .users-table tbody tr:hover{
+  background:#F8FBFF!important;
+}
+
+/* USER CELL */
+.users-page .user-cell{
+  gap:10px!important;
+  min-width:220px;
+}
+
+.users-page .user-avatar{
+  width:38px!important;
+  min-width:38px!important;
+  height:38px!important;
+  border-radius:50%!important;
+  background:#EEF4FB!important;
+  color:#2B64A5!important;
+  font-size:11px!important;
+  font-weight:950!important;
+}
+
+.users-page .user-cell strong{
+  color:#294768!important;
+  font-size:11px!important;
+}
+
+.users-page .user-cell small{
+  color:#96A2B2!important;
+  font-size:9px!important;
+}
+
+/* STATUS + ROLE */
+.users-page .user-status,
+.users-page .user-role-badge{
+  min-height:28px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  padding:0 9px!important;
+  border-radius:999px!important;
+  font-size:8px!important;
+  font-weight:900!important;
+  white-space:nowrap;
+}
+
+.users-page .user-action-button{
+  min-height:32px!important;
+  padding:0 10px!important;
+  border:1px solid #DCE6F2!important;
+  border-radius:9px!important;
+  background:#F7FAFE!important;
+  color:#3D6D9F!important;
+  font-size:8px!important;
+  font-weight:900!important;
+  box-shadow:none!important;
+}
+
+/* MODAL CLEANUP */
+.user-modal{
+  padding:20px!important;
+}
+
+.user-modal-card{
+  width:min(720px,100%)!important;
+  max-height:min(860px,calc(100vh - 40px))!important;
+  overflow:auto!important;
+  border:1px solid #E1E7EF!important;
+  border-radius:20px!important;
+  background:#fff!important;
+  box-shadow:0 34px 90px rgba(8,31,66,.22)!important;
+}
+
+.user-modal-header{
+  position:sticky;
+  top:0;
+  z-index:3;
+  padding:20px 22px 14px!important;
+  margin:0!important;
+  background:#fff;
+  border-bottom:1px solid #EEF2F6;
+}
+
+#userForm{
+  padding:20px 22px 22px!important;
+}
+
+.user-form-grid{
+  gap:12px!important;
+}
+
+.user-info-panel{
+  border:1px solid #E4EAF2!important;
+  border-radius:14px!important;
+  background:#F8FAFD!important;
+}
+
+/* old floating mark */
+body > .onnylab-main-logo{
+  display:none!important;
+}
+
+@media(max-width:1050px){
+  .users-page .user-summary-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+@media(max-width:760px){
+  .users-page{
+    width:calc(100% - 24px)!important;
+    padding:14px 0 92px!important;
+    gap:14px;
+  }
+
+  .users-v3-hero{
+    display:grid;
+    padding:20px;
+    border-radius:18px;
+  }
+
+  .users-v3-hero-actions{
+    justify-content:flex-start;
+  }
+
+  .users-v3-hero-button{
+    width:100%;
+  }
+
+  .users-page .user-summary-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+
+  .users-page .users-toolbar{
+    grid-template-columns:1fr!important;
+  }
+
+  .user-modal{
+    padding:10px!important;
+  }
+
+  .user-modal-card{
+    max-height:calc(100vh - 20px)!important;
+    border-radius:16px!important;
+  }
+}
